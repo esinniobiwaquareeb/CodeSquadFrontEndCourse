@@ -1,0 +1,990 @@
+<!DOCTYPE html>
+<html lang='en'>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" >
+<meta charset='utf-8'>
+<meta content='IE=edge,chrome=1' http-equiv='X-UA-Compatible'>
+<meta content='width=device-width, initial-scale=1' name='viewport'>
+<meta content='Transforms open up a world of opportunity with HTML and CSS, learn how to use them to manipulate elements in all sorts of manners.' name='description'>
+<meta content='css3 transforms rotate translate skew 3d backface visibility' name='keywords'>
+<title>Transforms - Learn to Code Advanced HTML &amp; CSS</title>
+<script src='../../assets/javascripts/vendor/modernizr-2.8.1.js'></script>
+<link href='https://cloud.typography.com/6623692/607644/css/fonts.css' rel='stylesheet'>
+<link href='https://fonts.googleapis.com/css?family=Source+Code+Pro' rel='stylesheet'>
+<link href='../../assets/stylesheets/main.css' rel='stylesheet'>
+</head>
+<body class='advanced-html-css advanced-html-css_css-transforms advanced-html-css_css-transforms_index'>
+<div class='wrap-macro'>
+<div class='wrap-micro group'>
+<aside class='aside'>
+<header class='primary-header' role='banner'>
+<h1 class='primary-logo'>
+<a href='../index.html'>
+<span>Learn to Code Advanced</span>
+<abbr title='Hyper Text Markup Language'>HTML</abbr>
+<abbr title='and'>&amp;</abbr>
+<abbr title='Cascading Style Sheets'>CSS</abbr>
+</a>
+</h1>
+<a class='primary-nav-btn' data-js='primary-nav-btn' href='#' rel='nofollow'>Navigation</a>
+</header>
+<div class='aside-macro'>
+<div class='aside-micro'>
+<nav class='primary-nav' role='navigation'>
+<ul>
+<li class='performance-organization'>
+<a href='../performance-organization/index.html'>
+<strong>Lesson 1</strong>
+Performance &amp; Organization
+</a>
+</li>
+<li class='detailed-css-positioning'>
+<a href='../detailed-css-positioning/index.html'>
+<strong>Lesson 2</strong>
+Detailed Positioning
+</a>
+</li>
+<li class='complex-selectors'>
+<a href='../complex-selectors/index.html'>
+<strong>Lesson 3</strong>
+Complex Selectors
+</a>
+</li>
+<li class='responsive-web-design'>
+<a href='../responsive-web-design/index.html'>
+<strong>Lesson 4</strong>
+Responsive Web Design
+</a>
+</li>
+<li class='preprocessors'>
+<a href='../preprocessors/index.html'>
+<strong>Lesson 5</strong>
+Preprocessors
+</a>
+</li>
+<li class='jquery'>
+<a href='../jquery/index.html'>
+<strong>Lesson 6</strong>
+jQuery
+</a>
+</li>
+<li class='css-transforms'>
+<a href='index.html'>
+<strong>Lesson 7</strong>
+Transforms
+</a>
+</li>
+<li class='transitions-animations'>
+<a href='../transitions-animations/index.html'>
+<strong>Lesson 8</strong>
+Transitions &amp; Animations
+</a>
+</li>
+<li class='feature-support-polyfills'>
+<a href='../feature-support-polyfills/index.html'>
+<strong>Lesson 9</strong>
+Feature Support &amp; Polyfills
+</a>
+ </li>
+<li class='semantics-accessibility'>
+<a href='../semantics-accessibility/index.html'>
+<strong>Lesson 10</strong>
+Extending Semantics &amp; Accessibility
+</a>
+</li>
+</ul>
+</nav>
+<div class='aside-group'>
+<p>Learn to Code Advanced HTML <abbr title="and">&amp;</abbr> CSS is written by designer <abbr title="and">&amp;</abbr> front-end developer <a href="http://codesquadllc.com">CodeSquad LLC</a>.</p>
+<p>Checkout <a href="../../html-css/index.html">Learn to Code HTML <abbr title="and">&amp;</abbr> CSS</a> for a beginner&#8217;s guide front-end design <abbr title="and">&amp;</abbr> development.</p>
+</div>
+<p>Want to learn to more HTML <abbr title="and">&amp;</abbr> CSS, or study other topics? Find the right course for you.</p>
+<div class='margin-bottom'>
+<a class='btn btn-alt' href='../../recommendations/index.html'>Get Course Recommendations</a>
+</div>
+</div>
+</div>
+</aside>
+<section class='main' data-js='primary-nav-close'>
+<div class='group'>
+<article class='lesson container group' data-js='lesson'>
+<div class='lesson-title'>
+<h6>Lesson 7</h6>
+<h1>Transforms</h1>
+</div>
+<script src='https://m.servedby-buysellads.com/monetization.js' type='text/javascript'></script>
+<div class='bsa-cpc'></div>
+<script>
+                (function(){
+                  if(typeof _bsa !== 'undefined' && _bsa) {
+                    _bsa.init('default', 'CKYDK5QJ', 'placement:learncodesquadllccom', {
+                      target: '.bsa-cpc',
+                      align: 'horizontal',
+                      disable_css: 'true'
+                    });
+                  }
+                })();
+              </script>
+<div class='clamp clamp-release'>
+<div class='pop-out'>
+<nav class='toc'>
+<h4>
+In this Lesson
+<span class='toc-number'>7</span>
+</h4>
+<h6>CSS</h6>
+<ul>
+<li>
+<a href='#transform-syntax'>Transform Syntax</a>
+</li>
+<li>
+<a href='#two-dimensional-transforms'>2D Transforms</a>
+</li>
+<li>
+<a href='#combining-transforms'>Combining Transforms</a>
+</li>
+<li>
+<a href='#transform-origin'>Transform Origin</a>
+</li>
+<li>
+<a href='#perspective'>Perspective</a>
+</li>
+<li>
+<a href='#three-dimensional-transforms'>3D Transforms</a>
+</li>
+<li>
+<a href='#transform-style'>Transform Style</a>
+</li>
+<li>
+<a href='#backface-visibility'>Backface Visibility</a>
+</li>
+</ul>
+<h6>Share</h6>
+<ul class='share' data-js='share' data-permalink='<footer class='primary-footer'>
+<div class='clamp'>
+<small>&copy; CodeSquad LLC</small>
+<div class='enjoy-cta'>
+Enjoy these lessons?
+<a class='twitter-follow-button' data-lang='en' data-show-count='false' data-size='large' href='https://twitter.com/codesquadllc'>
+Follow @codesquadllc
+</a>
+</div>
+</div>
+<li>
+<a class='share-twitter' data-js='share-twitter' href='#' rel='nofollow'>
+Share on Twitter
+</a>
+</li>
+<li>
+<a class='share-facebook' data-js='share-facebook' href='#' rel='nofollow'>
+Share on Facebook
+</a>
+</li>
+<li>
+ <a class='share-google' data-js='share-google' href='#' rel='nofollow'>
+Share on Google+
+</a>
+</li>
+</ul>
+</nav>
+<div class='ad-spot group'>
+<script async id='_carbonads_js' src='https://cdn.carbonads.com/carbon.js?serve=CKYILKJL&placement=learncodesquadllccom' type='text/javascript'></script>
+</div>
+</div>
+</div>
+<p>With CSS3 came new ways to position and alter elements. Now general layout techniques can be revisited with alternative ways to size, position, and change elements. All of these new techniques are made possible by the <code>transform</code> property.</p>
+<p>The <code>transform</code> property comes in two different settings, two-dimensional and three-dimensional. Each of these come with their own individual properties and values.</p>
+<p>Within this lesson we&#8217;ll take a look at both two-dimensional and three-dimensional transforms. Generally speaking, browser support for the <code>transform</code> property isn&#8217;t great, but it is getting better every day. For the best support vendor prefixes are encouraged, however you may need to download the nightly version of <a href="https://tools.google.com/dlpage/chromesxs/" rel="nofollow">Chrome</a> to see all of these transforms in action.</p>
+<h2 id='transform-syntax'>Transform Syntax</h2>
+<p>The actual syntax for the <code>transform</code> property is quite simple, including the transform property followed by the value. The value specifies the transform type followed by a specific amount inside parentheses.</p>
+<pre class="highlight css"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1&#x000A;2&#x000A;3&#x000A;4&#x000A;5&#x000A;6&#x000A;7</pre></td><td class="rouge-code"><pre><span class="nt">div</span> <span class="p">{</span>&#x000A;  <span class="nl">-webkit-transform</span><span class="p">:</span> <span class="n">scale</span><span class="p">(</span><span class="m">1.5</span><span class="p">);</span>&#x000A;     <span class="nl">-moz-transform</span><span class="p">:</span> <span class="n">scale</span><span class="p">(</span><span class="m">1.5</span><span class="p">);</span>&#x000A;       <span class="nl">-o-transform</span><span class="p">:</span> <span class="n">scale</span><span class="p">(</span><span class="m">1.5</span><span class="p">);</span>&#x000A;          <span class="nl">transform</span><span class="p">:</span> <span class="n">scale</span><span class="p">(</span><span class="m">1.5</span><span class="p">);</span>&#x000A;<span class="p">}</span>&#x000A;</pre></td></tr></tbody></table>
+              </code></pre>
+<p>Notice how the <code>transform</code> property includes multiple vendor prefixes to gain the best support across all browsers. The un-prefixed declaration comes last to overwrite the prefixed versions, should a browser fully support the transform property.</p>
+<p>In the interest of brevity, the remainder of this lesson will not include vendor prefixes. They are, however, strongly encouraged for any code in a production environment. Over time we will be able to remove these prefixes, however keeping them in is the safest approach for the time being.</p>
+<h2 id='two-dimensional-transforms'>2D Transforms</h2>
+<p>Elements may be distorted, or transformed, on both a two-dimensional plane or a three-dimensional plane. Two-dimensional transforms work on the <code>x</code> and <code>y</code> axes, known as horizontal and vertical axes. Three-dimensional transforms work on both the <code>x</code> and <code>y</code> axes, as well as the <code>z</code> axis. These three-dimensional transforms help define not only the length and width of an element, but also the depth. We&#8217;ll start by discussing how to <a href="http://www.css3files.com/transform/" rel="nofollow">transform elements</a> on a two-dimensional plane, and then work our way into three-dimensional transforms.</p>
+<h3>2D Rotate</h3>
+<p>The <code>transform</code> property accepts a handful of different values. The <code>rotate</code> value provides the ability to rotate an element from <code>0</code> to <code>360</code> degrees. Using a positive value will rotate an element clockwise, and using a negative value will rotate the element counterclockwise. The default point of rotation is the center of the element, <code>50%</code> <code>50%</code>, both horizontally and vertically. Later we will discuss how you can change this default point of rotation.</p>
+<h6>HTML</h6>
+<pre class="highlight html"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1&#x000A;2&#x000A;3</pre></td><td class="rouge-code"><pre><span class="nt">&lt;figure</span> <span class="na">class=</span><span class="s">"box-1"</span><span class="nt">&gt;</span>Box 1<span class="nt">&lt;/figure&gt;</span>&#x000A;<span class="nt">&lt;figure</span> <span class="na">class=</span><span class="s">"box-2"</span><span class="nt">&gt;</span>Box 2<span class="nt">&lt;/figure&gt;</span>&#x000A;</pre></td></tr></tbody></table>
+              </code></pre>
+<h6>CSS</h6>
+<pre class="highlight css"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1&#x000A;2&#x000A;3&#x000A;4&#x000A;5&#x000A;6&#x000A;7</pre></td><td class="rouge-code"><pre><span class="nc">.box-1</span> <span class="p">{</span>&#x000A;  <span class="nl">transform</span><span class="p">:</span> <span class="n">rotate</span><span class="p">(</span><span class="m">20deg</span><span class="p">);</span>&#x000A;<span class="p">}</span>&#x000A;<span class="nc">.box-2</span> <span class="p">{</span>&#x000A;  <span class="nl">transform</span><span class="p">:</span> <span class="n">rotate</span><span class="p">(</span><span class="m">-55deg</span><span class="p">);</span>&#x000A;<span class="p">}</span>&#x000A;</pre></td></tr></tbody></table>
+              </code></pre>
+<div class='note'>
+<h4 class='demo-title'>Rotate Demo</h4>
+<p class='codepen' data-default-tab='result' data-height='222' data-slug-hash='AKDIp' data-theme-id='5990'>
+See the Pen <a href='http://codepen.io/codesquadllc/pen/AKDIp/'>Rotate</a> by CodeSquad LLC (<a href='http://codepen.io/codesquadllc'>@codesquadllc</a>) on <a href='http://codepen.io'>CodePen</a>.
+</p>
+</div>
+<p>The gray box behind the rotated element symbolizes the original position of the element. Additionally, upon hover the box will rotate 360 degrees horizontally. As the lesson progresses, keep an eye out for the gray box within each demonstration as a reference to the element&#8217;s original position and the horizontal rotation to help demonstrate an elements alteration and depth.</p>
+<h3>2D Scale</h3>
+<p>Using the <code>scale</code> value within the <code>transform</code> property allows you to change the appeared size of an element. The default scale value is <code>1</code>, therefore any value between <code>.99</code> and <code>.01</code> makes an element appear smaller while any value greater than or equal to <code>1.01</code> makes an element appear larger.</p>
+<h6>HTML</h6>
+<pre class="highlight html"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1&#x000A;2&#x000A;3</pre></td><td class="rouge-code"><pre><span class="nt">&lt;figure</span> <span class="na">class=</span><span class="s">"box-1"</span><span class="nt">&gt;</span>Box 1<span class="nt">&lt;/figure&gt;</span>&#x000A;<span class="nt">&lt;figure</span> <span class="na">class=</span><span class="s">"box-2"</span><span class="nt">&gt;</span>Box 2<span class="nt">&lt;/figure&gt;</span>&#x000A;</pre></td></tr></tbody></table>
+              </code></pre>
+ <h6>CSS</h6>
+<pre class="highlight css"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1&#x000A;2&#x000A;3&#x000A;4&#x000A;5&#x000A;6&#x000A;7</pre></td><td class="rouge-code"><pre><span class="nc">.box-1</span> <span class="p">{</span>&#x000A;  <span class="nl">transform</span><span class="p">:</span> <span class="n">scale</span><span class="p">(</span><span class="m">.75</span><span class="p">);</span>&#x000A;<span class="p">}</span>&#x000A;<span class="nc">.box-2</span> <span class="p">{</span>&#x000A;  <span class="nl">transform</span><span class="p">:</span> <span class="n">scale</span><span class="p">(</span><span class="m">1.25</span><span class="p">);</span>&#x000A;<span class="p">}</span>&#x000A;</pre></td></tr></tbody></table>
+              </code></pre>
+<div class='note'>
+<h4 class='demo-title'>Scale Demo</h4>
+<p class='codepen' data-default-tab='result' data-height='216' data-slug-hash='khtnm' data-theme-id='5990'>
+See the Pen <a href='http://codepen.io/codesquadllc/pen/khtnm/'>Scale</a> by CodeSquad LLC (<a href='http://codepen.io/codesquadllc'>@codesquadllc</a>) on <a href='http://codepen.io'>CodePen</a>.
+</p>
+</div>
+<p>It is possible to scale only the height or width of an element using the <code>scaleX</code> and <code>scaleY</code> values. The <code>scaleX</code> value will scale the width of an element while the <code>scaleY</code> value will scale the height of an element. To scale both the height and width of an element but at different sizes, the <code>x</code> and <code>y</code> axis values may be set simultaneously. To do so, use the <code>scale</code> transform declaring the <code>x</code> axis value first, followed by a comma, and then the <code>y</code> axis value.</p>
+<h6>HTML</h6>
+<pre class="highlight html"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1&#x000A;2&#x000A;3&#x000A;4</pre></td><td class="rouge-code"><pre><span class="nt">&lt;figure</span> <span class="na">class=</span><span class="s">"box-1"</span><span class="nt">&gt;</span>Box 1<span class="nt">&lt;/figure&gt;</span>&#x000A;<span class="nt">&lt;figure</span> <span class="na">class=</span><span class="s">"box-2"</span><span class="nt">&gt;</span>Box 2<span class="nt">&lt;/figure&gt;</span>&#x000A;<span class="nt">&lt;figure</span> <span class="na">class=</span><span class="s">"box-3"</span><span class="nt">&gt;</span>Box 3<span class="nt">&lt;/figure&gt;</span>&#x000A;</pre></td></tr></tbody></table>
+              </code></pre>
+<h6>CSS</h6>
+<pre class="highlight css"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1&#x000A;2&#x000A;3&#x000A;4&#x000A;5&#x000A;6&#x000A;7&#x000A;8&#x000A;9&#x000A;10</pre></td><td class="rouge-code"><pre><span class="nc">.box-1</span> <span class="p">{</span>&#x000A;  <span class="nl">transform</span><span class="p">:</span> <span class="n">scaleX</span><span class="p">(</span><span class="m">.5</span><span class="p">);</span>&#x000A;<span class="p">}</span>&#x000A;<span class="nc">.box-2</span> <span class="p">{</span>&#x000A;  <span class="nl">transform</span><span class="p">:</span> <span class="n">scaleY</span><span class="p">(</span><span class="m">1.15</span><span class="p">);</span>&#x000A;<span class="p">}</span>&#x000A;<span class="nc">.box-3</span> <span class="p">{</span>&#x000A;  <span class="nl">transform</span><span class="p">:</span> <span class="n">scale</span><span class="p">(</span><span class="m">.5</span><span class="p">,</span> <span class="m">1.15</span><span class="p">);</span>&#x000A;<span class="p">}</span>&#x000A;</pre></td></tr></tbody></table>
+              </code></pre>
+<div class='note'>
+<h4 class='demo-title'>Multiple Scaling Demo</h4>
+<p class='codepen' data-default-tab='result' data-height='216' data-slug-hash='bIiKt' data-theme-id='5990'>
+See the Pen <a href='http://codepen.io/codesquadllc/pen/bIiKt/'>Multiple Scaling</a> by CodeSquad LLC (<a href='http://codepen.io/codesquadllc'>@codesquadllc</a>) on <a href='http://codepen.io'>CodePen</a>.
+</p>
+</div>
+<h3>2D Translate</h3>
+<p>The <code>translate</code> value works a bit like that of relative positioning, pushing and pulling an element in different directions without interrupting the normal flow of the document. Using the <code>translateX</code> value will change the position of an element on the horizontal axis while using the <code>translateY</code> value will change the position of an element on the vertical axis.</p>
+<p>As with the <code>scale</code> value, to set both the <code>x</code> and <code>y</code> axis values at once, use the <code>translate</code> value and declare the <code>x</code> axis value first, followed by a comma, and then the <code>y</code> axis value.</p>
+<p>The distance values used within the <code>translate</code> value may be any general length measurement, most commonly pixels or percentages. Positive values will push an element down and to the right of its default position while negative values will pull an element up and to the left of its default position.</p>
+<h6>HTML</h6>
+<pre class="highlight html"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1&#x000A;2&#x000A;3&#x000A;4</pre></td><td class="rouge-code"><pre><span class="nt">&lt;figure</span> <span class="na">class=</span><span class="s">"box-1"</span><span class="nt">&gt;</span>Box 1<span class="nt">&lt;/figure&gt;</span>&#x000A;<span class="nt">&lt;figure</span> <span class="na">class=</span><span class="s">"box-2"</span><span class="nt">&gt;</span>Box 2<span class="nt">&lt;/figure&gt;</span>&#x000A;<span class="nt">&lt;figure</span> <span class="na">class=</span><span class="s">"box-3"</span><span class="nt">&gt;</span>Box 3<span class="nt">&lt;/figure&gt;</span>&#x000A;</pre></td></tr></tbody></table>
+              </code></pre>
+<h6>CSS</h6>
+<pre class="highlight css"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1&#x000A;2&#x000A;3&#x000A;4&#x000A;5&#x000A;6&#x000A;7&#x000A;8&#x000A;9&#x000A;10</pre></td><td class="rouge-code"><pre><span class="nc">.box-1</span> <span class="p">{</span>&#x000A;  <span class="nl">transform</span><span class="p">:</span> <span class="n">translateX</span><span class="p">(</span><span class="m">-10px</span><span class="p">);</span>&#x000A;<span class="p">}</span>&#x000A;<span class="nc">.box-2</span> <span class="p">{</span>&#x000A;  <span class="nl">transform</span><span class="p">:</span> <span class="n">translateY</span><span class="p">(</span><span class="m">25%</span><span class="p">);</span>&#x000A;<span class="p">}</span>&#x000A;<span class="nc">.box-3</span> <span class="p">{</span>&#x000A;  <span class="nl">transform</span><span class="p">:</span> <span class="n">translate</span><span class="p">(</span><span class="m">-10px</span><span class="p">,</span> <span class="m">25%</span><span class="p">);</span>&#x000A;<span class="p">}</span>&#x000A;</pre></td></tr></tbody></table>
+              </code></pre>
+<div class='note'>
+<h4 class='demo-title'>Translate Demo</h4>
+<p class='codepen' data-default-tab='result' data-height='228' data-slug-hash='LqHwt' data-theme-id='5990'>
+See the Pen <a href='http://codepen.io/codesquadllc/pen/LqHwt/'>Translate</a> by CodeSquad LLC (<a href='http://codepen.io/codesquadllc'>@codesquadllc</a>) on <a href='http://codepen.io'>CodePen</a>.
+</p>
+</div>
+<h3>2D Skew</h3>
+<p>The last <code>transform</code> value in the group, <code>skew</code>, is used to distort elements on the horizontal axis, vertical axis, or both. The syntax is very similar to that of the <code>scale</code> and <code>translate</code> values. Using the <code>skewX</code> value distorts an element on the horizontal axis while the <code>skewY</code> value distorts an element on the vertical axis. To distort an element on both axes the <code>skew</code> value is used, declaring the <code>x</code> axis value first, followed by a comma, and then the <code>y</code> axis value.%p</p>
+<p>The distance calculation of the <code>skew</code> value is measured in units of degrees. Length measurements, such as pixels or percentages, do not apply here.</p>
+<h6>HTML</h6>
+<pre class="highlight html"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1&#x000A;2&#x000A;3&#x000A;4</pre></td><td class="rouge-code"><pre><span class="nt">&lt;figure</span> <span class="na">class=</span><span class="s">"box-1"</span><span class="nt">&gt;</span>Box 1<span class="nt">&lt;/figure&gt;</span>&#x000A;<span class="nt">&lt;figure</span> <span class="na">class=</span><span class="s">"box-2"</span><span class="nt">&gt;</span>Box 2<span class="nt">&lt;/figure&gt;</span>&#x000A;<span class="nt">&lt;figure</span> <span class="na">class=</span><span class="s">"box-3"</span><span class="nt">&gt;</span>Box 3<span class="nt">&lt;/figure&gt;</span>&#x000A;</pre></td></tr></tbody></table>
+              </code></pre>
+<h6>CSS</h6>
+<pre class="highlight css"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1&#x000A;2&#x000A;3&#x000A;4&#x000A;5&#x000A;6&#x000A;7&#x000A;8&#x000A;9&#x000A;10</pre></td><td class="rouge-code"><pre><span class="nc">.box-1</span> <span class="p">{</span>&#x000A;  <span class="nl">transform</span><span class="p">:</span> <span class="n">skewX</span><span class="p">(</span><span class="m">5deg</span><span class="p">);</span>&#x000A;<span class="p">}</span>&#x000A;<span class="nc">.box-2</span> <span class="p">{</span>&#x000A;  <span class="nl">transform</span><span class="p">:</span> <span class="n">skewY</span><span class="p">(</span><span class="m">-20deg</span><span class="p">);</span>&#x000A;<span class="p">}</span>&#x000A;<span class="nc">.box-3</span> <span class="p">{</span>&#x000A;  <span class="nl">transform</span><span class="p">:</span> <span class="n">skew</span><span class="p">(</span><span class="m">5deg</span><span class="p">,</span> <span class="m">-20deg</span><span class="p">);</span>&#x000A;<span class="p">}</span>&#x000A;</pre></td></tr></tbody></table>
+              </code></pre>
+<div class='note'>
+<h4 class='demo-title'>Skew Demo</h4>
+<p class='codepen' data-default-tab='result' data-height='222' data-slug-hash='GHwCK' data-theme-id='5990'>
+See the Pen <a href='http://codepen.io/codesquadllc/pen/GHwCK/'>Skew</a> by CodeSquad LLC (<a href='http://codepen.io/codesquadllc'>@codesquadllc</a>) on <a href='http://codepen.io'>CodePen</a>.
+</p>
+</div>
+<h2 id='combining-transforms'>Combining Transforms</h2>
+<p>It is common for multiple transforms to be used at once, rotating and scaling the size of an element at the same time for example. In this event multiple transforms can be combined together. To combine transforms, list the transform values within the <code>transform</code> property one after the other without the use of commas.</p>
+<p>Using multiple <code>transform</code> declarations will not work, as each declaration will overwrite the one above it. The behavior in that case would be the same as if you were to set the <code>height</code> of an element numerous times.</p>
+<h6>HTML</h6>
+<pre class="highlight html"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1&#x000A;2&#x000A;3</pre></td><td class="rouge-code"><pre><span class="nt">&lt;figure</span> <span class="na">class=</span><span class="s">"box-1"</span><span class="nt">&gt;</span>Box 1<span class="nt">&lt;/figure&gt;</span>&#x000A;<span class="nt">&lt;figure</span> <span class="na">class=</span><span class="s">"box-2"</span><span class="nt">&gt;</span>Box 2<span class="nt">&lt;/figure&gt;</span>&#x000A;</pre></td></tr></tbody></table>
+              </code></pre>
+<h6>CSS</h6>
+<pre class="highlight css"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1&#x000A;2&#x000A;3&#x000A;4&#x000A;5&#x000A;6&#x000A;7</pre></td><td class="rouge-code"><pre><span class="nc">.box-1</span> <span class="p">{</span>&#x000A;  <span class="nl">transform</span><span class="p">:</span> <span class="n">rotate</span><span class="p">(</span><span class="m">25deg</span><span class="p">)</span> <span class="n">scale</span><span class="p">(</span><span class="m">.75</span><span class="p">);</span>&#x000A;<span class="p">}</span>&#x000A;<span class="nc">.box-2</span> <span class="p">{</span>&#x000A;  <span class="nl">transform</span><span class="p">:</span> <span class="n">skew</span><span class="p">(</span><span class="m">10deg</span><span class="p">,</span> <span class="m">20deg</span><span class="p">)</span> <span class="n">translateX</span><span class="p">(</span><span class="m">20px</span><span class="p">);</span>&#x000A;<span class="p">}</span>&#x000A;</pre></td></tr></tbody></table>
+              </code></pre>
+<div class='note'>
+<h4 class='demo-title'>Combining Transforms Demo</h4>
+<p class='codepen' data-default-tab='result' data-height='228' data-slug-hash='gLwly' data-theme-id='5990'>
+See the Pen <a href='http://codepen.io/codesquadllc/pen/gLwly/'>Combining Transforms</a> by CodeSquad LLC (<a href='http://codepen.io/codesquadllc'>@codesquadllc</a>) on <a href='http://codepen.io'>CodePen</a>.
+</p>
+</div>
+<p>Behind every transform there is also a matrix explicitly defining the behavior of the transform. Using the <code>rotate</code>, <code>scale</code>, <code>transition</code>, and <code>skew</code> values provide an easy way to establish this matrix. However, should you be mathematically inclined, and prefer to take a <a href="http://dev.opera.com/articles/view/understanding-the-css-transforms-matrix/" rel="nofollow">deeper dive</a> into transforms, try your hand at using the <code>matrix</code> property.</p>
+<div class='note note-box'>
+<h3>2D Cube Demo</h3>
+<h6>HTML</h6>
+<pre class="highlight html"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1&#x000A;2&#x000A;3&#x000A;4&#x000A;5&#x000A;6</pre></td><td class="rouge-code"><pre><span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"cube"</span><span class="nt">&gt;</span>&#x000A;  <span class="nt">&lt;figure</span> <span class="na">class=</span><span class="s">"side top"</span><span class="nt">&gt;</span>1<span class="nt">&lt;/figure&gt;</span>&#x000A;  <span class="nt">&lt;figure</span> <span class="na">class=</span><span class="s">"side left"</span><span class="nt">&gt;</span>2<span class="nt">&lt;/figure&gt;</span>&#x000A;  <span class="nt">&lt;figure</span> <span class="na">class=</span><span class="s">"side right"</span><span class="nt">&gt;</span>3<span class="nt">&lt;/figure&gt;</span>&#x000A;<span class="nt">&lt;/div&gt;</span>&#x000A;</pre></td></tr></tbody></table>
+                </code></pre>
+<h6>CSS</h6>
+<pre class="highlight css"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1&#x000A;2&#x000A;3&#x000A;4&#x000A;5&#x000A;6&#x000A;7&#x000A;8&#x000A;9&#x000A;10&#x000A;11&#x000A;12&#x000A;13&#x000A;14&#x000A;15&#x000A;16&#x000A;17&#x000A;18&#x000A;19&#x000A;20&#x000A;21</pre></td><td class="rouge-code"><pre><span class="nc">.cube</span> <span class="p">{</span>&#x000A;  <span class="nl">position</span><span class="p">:</span> <span class="nb">relative</span><span class="p">;</span>&#x000A;<span class="p">}</span>&#x000A;<span class="nc">.side</span> <span class="p">{</span>&#x000A;  <span class="nl">height</span><span class="p">:</span> <span class="m">95px</span><span class="p">;</span>&#x000A;  <span class="nl">position</span><span class="p">:</span> <span class="nb">absolute</span><span class="p">;</span>&#x000A;  <span class="nl">width</span><span class="p">:</span> <span class="m">95px</span><span class="p">;</span>&#x000A;<span class="p">}</span>&#x000A;<span class="nc">.top</span> <span class="p">{</span>&#x000A;  <span class="nl">background</span><span class="p">:</span> <span class="m">#9acc53</span><span class="p">;</span>&#x000A;  <span class="nl">transform</span><span class="p">:</span> <span class="n">rotate</span><span class="p">(</span><span class="m">-45deg</span><span class="p">)</span> <span class="n">skew</span><span class="p">(</span><span class="m">15deg</span><span class="p">,</span> <span class="m">15deg</span><span class="p">);</span>&#x000A;<span class="p">}</span>&#x000A;<span class="nc">.left</span> <span class="p">{</span>&#x000A;  <span class="nl">background</span><span class="p">:</span> <span class="m">#8ec63f</span><span class="p">;</span>&#x000A;  <span class="nl">transform</span><span class="p">:</span> <span class="n">rotate</span><span class="p">(</span><span class="m">15deg</span><span class="p">)</span> <span class="n">skew</span><span class="p">(</span><span class="m">15deg</span><span class="p">,</span> <span class="m">15deg</span><span class="p">)</span> <span class="n">translate</span><span class="p">(</span><span class="m">-50%</span><span class="p">,</span> <span class="m">100%</span><span class="p">);</span>&#x000A;<span class="p">}</span>&#x000A;<span class="nc">.right</span> <span class="p">{</span>&#x000A;  <span class="nl">background</span><span class="p">:</span> <span class="m">#80b239</span><span class="p">;</span>&#x000A;  <span class="nl">transform</span><span class="p">:</span> <span class="n">rotate</span><span class="p">(</span><span class="m">-15deg</span><span class="p">)</span> <span class="n">skew</span><span class="p">(</span><span class="m">-15deg</span><span class="p">,</span> <span class="m">-15deg</span><span class="p">)</span> <span class="n">translate</span><span class="p">(</span><span class="m">50%</span><span class="p">,</span> <span class="m">100%</span><span class="p">);</span>&#x000A;<span class="p">}</span>&#x000A;</pre></td></tr></tbody></table>
+                </code></pre>
+<h4 class='demo-title'>Demo</h4>
+<div class='demo-code'>
+<p class='codepen' data-default-tab='result' data-height='288' data-slug-hash='AklBJ' data-theme-id='5990'>
+See the Pen <a href='http://codepen.io/codesquadllc/pen/AklBJ/'>2D Cube</a> by CodeSquad LLC (<a href='http://codepen.io/codesquadllc'>@codesquadllc</a>) on <a href='http://codepen.io'>CodePen</a>.
+</p>
+</div>
+</div>
+<h2 id='transform-origin'>Transform Origin</h2>
+<p>As previously mentioned, the default transform origin is the dead center of an element, both <code>50%</code> horizontally and <code>50%</code> vertically. To change this default origin position the <code>transform-origin</code> property may be used.</p>
+<p>The <code>transform-origin</code> property can accept one or two values. When only one value is specified, that value is used for both the horizontal and vertical axes. If two values are specified, the first is used for the horizontal axis and the second is used for the vertical axis.</p>
+<p>Individually the values are treated like that of a background image position, using either a length or keyword value. That said, <code>0 0</code> is the same value as <code>top left</code>, and <code>100% 100%</code> is the same value as <code>bottom right</code>. More specific values can also be set, for example <code>20px 50px</code> would set the origin to 20 pixels across and 50 pixels down the element.</p>
+<h6>HTML</h6>
+<pre class="highlight html"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1&#x000A;2&#x000A;3&#x000A;4&#x000A;5</pre></td><td class="rouge-code"><pre><span class="nt">&lt;figure</span> <span class="na">class=</span><span class="s">"box-1"</span><span class="nt">&gt;</span>Box 1<span class="nt">&lt;/figure&gt;</span>&#x000A;<span class="nt">&lt;figure</span> <span class="na">class=</span><span class="s">"box-2"</span><span class="nt">&gt;</span>Box 2<span class="nt">&lt;/figure&gt;</span>&#x000A;<span class="nt">&lt;figure</span> <span class="na">class=</span><span class="s">"box-3"</span><span class="nt">&gt;</span>Box 3<span class="nt">&lt;/figure&gt;</span>&#x000A;<span class="nt">&lt;figure</span> <span class="na">class=</span><span class="s">"box-4"</span><span class="nt">&gt;</span>Box 3<span class="nt">&lt;/figure&gt;</span>&#x000A;</pre></td></tr></tbody></table>
+              </code></pre>
+<h6>CSS</h6>
+<pre class="highlight css"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1&#x000A;2&#x000A;3&#x000A;4&#x000A;5&#x000A;6&#x000A;7&#x000A;8&#x000A;9&#x000A;10&#x000A;11&#x000A;12&#x000A;13&#x000A;14&#x000A;15&#x000A;16&#x000A;17</pre></td><td class="rouge-code"><pre><span class="nc">.box-1</span> <span class="p">{</span>&#x000A;  <span class="nl">transform</span><span class="p">:</span> <span class="n">rotate</span><span class="p">(</span><span class="m">15deg</span><span class="p">);</span>&#x000A;  <span class="nl">transform-origin</span><span class="p">:</span> <span class="m">0</span> <span class="m">0</span><span class="p">;</span>&#x000A;<span class="p">}</span>&#x000A;<span class="nc">.box-2</span> <span class="p">{</span>&#x000A;  <span class="nl">transform</span><span class="p">:</span> <span class="n">scale</span><span class="p">(</span><span class="m">.5</span><span class="p">);</span>&#x000A;  <span class="nl">transform-origin</span><span class="p">:</span> <span class="m">100%</span> <span class="m">100%</span><span class="p">;</span>&#x000A;<span class="p">}</span>&#x000A;<span class="nc">.box-3</span> <span class="p">{</span>&#x000A;  <span class="nl">transform</span><span class="p">:</span> <span class="n">skewX</span><span class="p">(</span><span class="m">20deg</span><span class="p">);</span>&#x000A;  <span class="nl">transform-origin</span><span class="p">:</span> <span class="nb">top</span> <span class="nb">left</span><span class="p">;</span>&#x000A;<span class="p">}</span>&#x000A;<span class="nc">.box-4</span> <span class="p">{</span>&#x000A;  <span class="nl">transform</span><span class="p">:</span> <span class="n">scale</span><span class="p">(</span><span class="m">.75</span><span class="p">)</span> <span class="n">translate</span><span class="p">(</span><span class="m">-10px</span><span class="p">,</span> <span class="m">-10px</span><span class="p">);</span>&#x000A;  <span class="nl">transform-origin</span><span class="p">:</span> <span class="m">20px</span> <span class="m">50px</span><span class="p">;</span>&#x000A;<span class="p">}</span>&#x000A;</pre></td></tr></tbody></table>
+              </code></pre>
+<div class='note'>
+<h4 class='demo-title'>Transform Origin Demo</h4>
+<p class='codepen' data-default-tab='result' data-height='222' data-slug-hash='uavIn' data-theme-id='5990'>
+See the Pen <a href='http://codepen.io/codesquadllc/pen/uavIn/'>Transform Origin</a> by CodeSquad LLC (<a href='http://codepen.io/codesquadllc'>@codesquadllc</a>) on <a href='http://codepen.io'>CodePen</a>.
+</p>
+</div>
+<p>Notably, the <code>transform-origin</code> property does run into some issues when also using the <code>translate</code> transform value. Since both of them are attempting to position the element, their values can collide. Use the two of these with caution, always checking to make sure the desired outcome is achieved.</p>
+<h2 id='perspective'>Perspective</h2>
+<p>In order for three-dimensional transforms to work the elements need a perspective from which to transform. The perspective for each element can be thought of as a <em>vanishing point</em>, similar to that which can be seen in three-dimensional drawings.</p>
+<p>The perspective of an element can be set in two different ways. One way includes using the <code>perspective</code> value within the <code>transform</code> property on individual elements, while the other includes using the <code>perspective</code> property on the parent element residing over child elements being transformed.</p>
+<p>Using the <code>perspective</code> value within the <code>transform</code> property works great for transforming one element from a single, unique perspective. When you want to transform a group of elements all with the same perspective, or vanishing point, apply the <code>perspective</code> property to their parent element.</p>
+<p>The example below shows a handful of elements all transformed using their individual perspectives with the <code>perspective</code> value.</p>
+<h6>HTML</h6>
+<pre class="highlight html"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1&#x000A;2&#x000A;3&#x000A;4</pre></td><td class="rouge-code"><pre><span class="nt">&lt;figure</span> <span class="na">class=</span><span class="s">"box"</span><span class="nt">&gt;</span>Box 1<span class="nt">&lt;/figure&gt;</span>&#x000A;<span class="nt">&lt;figure</span> <span class="na">class=</span><span class="s">"box"</span><span class="nt">&gt;</span>Box 2<span class="nt">&lt;/figure&gt;</span>&#x000A;<span class="nt">&lt;figure</span> <span class="na">class=</span><span class="s">"box"</span><span class="nt">&gt;</span>Box 3<span class="nt">&lt;/figure&gt;</span>&#x000A;</pre></td></tr></tbody></table>
+              </code></pre>
+<h6>CSS</h6>
+<pre class="highlight css"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1&#x000A;2&#x000A;3&#x000A;4</pre></td><td class="rouge-code"><pre><span class="nc">.box</span> <span class="p">{</span>&#x000A;  <span class="nl">transform</span><span class="p">:</span> <span class="n">perspective</span><span class="p">(</span><span class="m">200px</span><span class="p">)</span> <span class="n">rotateX</span><span class="p">(</span><span class="m">45deg</span><span class="p">);</span>&#x000A;<span class="p">}</span>&#x000A;</pre></td></tr></tbody></table>
+              </code></pre>
+<div class='note'>
+<h4 class='demo-title'>Perspective Value Demo</h4>
+<p class='codepen' data-default-tab='result' data-height='216' data-slug-hash='Ctqjx' data-theme-id='5990'>
+See the Pen <a href='http://codepen.io/codesquadllc/pen/Ctqjx/'>Perspective Value</a> by CodeSquad LLC (<a href='http://codepen.io/codesquadllc'>@codesquadllc</a>) on <a href='http://codepen.io'>CodePen</a>.
+</p>
+</div>
+<p>The following example shows a handful of elements, side by side, all transformed using the same perspective, accomplished by using the <code>perspective</code> property on their direct parent element.</p>
+<h6>HTML</h6>
+<pre class="highlight html"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1&#x000A;2&#x000A;3&#x000A;4&#x000A;5&#x000A;6</pre></td><td class="rouge-code"><pre><span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"group"</span><span class="nt">&gt;</span>&#x000A;  <span class="nt">&lt;figure</span> <span class="na">class=</span><span class="s">"box"</span><span class="nt">&gt;</span>Box 1<span class="nt">&lt;/figure&gt;</span>&#x000A;  <span class="nt">&lt;figure</span> <span class="na">class=</span><span class="s">"box"</span><span class="nt">&gt;</span>Box 2<span class="nt">&lt;/figure&gt;</span>&#x000A;  <span class="nt">&lt;figure</span> <span class="na">class=</span><span class="s">"box"</span><span class="nt">&gt;</span>Box 3<span class="nt">&lt;/figure&gt;</span>&#x000A;<span class="nt">&lt;/div&gt;</span>&#x000A;</pre></td></tr></tbody></table>
+              </code></pre>
+<h6>CSS</h6>
+<pre class="highlight css"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1&#x000A;2&#x000A;3&#x000A;4&#x000A;5&#x000A;6&#x000A;7</pre></td><td class="rouge-code"><pre><span class="nc">.group</span> <span class="p">{</span>&#x000A;  <span class="nl">perspective</span><span class="p">:</span> <span class="m">200px</span><span class="p">;</span>&#x000A;<span class="p">}</span>&#x000A;<span class="nc">.box</span> <span class="p">{</span>&#x000A;  <span class="nl">transform</span><span class="p">:</span> <span class="n">rotateX</span><span class="p">(</span><span class="m">45deg</span><span class="p">);</span>&#x000A;<span class="p">}</span>&#x000A;</pre></td></tr></tbody></table>
+              </code></pre>
+<div class='note'>
+<h4 class='demo-title'>Perspective Property Demo</h4>
+<p class='codepen' data-default-tab='result' data-height='216' data-slug-hash='LvyDu' data-theme-id='5990'>
+See the Pen <a href='http://codepen.io/codesquadllc/pen/LvyDu/'>Perspective Property</a> by CodeSquad LLC (<a href='http://codepen.io/codesquadllc'>@codesquadllc</a>) on <a href='http://codepen.io'>CodePen</a>.
+</p>
+</div>
+<h3>Perspective Depth Value</h3>
+<p>The perspective value can be set as <code>none</code> or a length measurement. The <code>none</code> value turns off any perspective, while the length value will set the depth of the perspective. The higher the value, the further away the perspective appears, thus creating a fairly low intensity perspective and a small three-dimensional change. The lower the value the closer the perspective appears, thus creating a high intensity perspective and a large three-dimensional change.</p>
+<p>Imagine yourself standing 10 feet away from a 10 foot cube as compared to standing 1,000 feet away from the same cube. At 10 feet, your distance to the cube is the same as the dimensions of the cube, therefore the perspective shift is much greater than it will be at 1,000 feet, where the dimensions of the cube are only one one-hundredth of your distance to the cube. The same thinking applies to perspective depth values.</p>
+<h6>HTML</h6>
+<pre class="highlight html"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1&#x000A;2&#x000A;3</pre></td><td class="rouge-code"><pre><span class="nt">&lt;figure</span> <span class="na">class=</span><span class="s">"box-1"</span><span class="nt">&gt;</span>Box 1<span class="nt">&lt;/figure&gt;</span>&#x000A;<span class="nt">&lt;figure</span> <span class="na">class=</span><span class="s">"box-2"</span><span class="nt">&gt;</span>Box 2<span class="nt">&lt;/figure&gt;</span>&#x000A;</pre></td></tr></tbody></table>
+              </code></pre>
+<h6>CSS</h6>
+<pre class="highlight css"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1&#x000A;2&#x000A;3&#x000A;4&#x000A;5&#x000A;6&#x000A;7</pre></td><td class="rouge-code"><pre><span class="nc">.box-1</span> <span class="p">{</span>&#x000A;  <span class="nl">transform</span><span class="p">:</span> <span class="n">perspective</span><span class="p">(</span><span class="m">100px</span><span class="p">)</span> <span class="n">rotateX</span><span class="p">(</span><span class="m">45deg</span><span class="p">);</span>&#x000A;<span class="p">}</span>&#x000A;<span class="nc">.box-2</span> <span class="p">{</span>&#x000A;  <span class="nl">transform</span><span class="p">:</span> <span class="n">perspective</span><span class="p">(</span><span class="m">1000px</span><span class="p">)</span> <span class="n">rotateX</span><span class="p">(</span><span class="m">45deg</span><span class="p">);</span>&#x000A;<span class="p">}</span>&#x000A;</pre></td></tr></tbody></table>
+              </code></pre>
+<div class='note'>
+<h4 class='demo-title'>Perspective Depth Value Demo</h4>
+<p class='codepen' data-default-tab='result' data-height='216' data-slug-hash='ihjFA' data-theme-id='5990'>
+See the Pen <a href='http://codepen.io/codesquadllc/pen/ihjFA/'>Perspective Depth Value</a> by CodeSquad LLC (<a href='http://codepen.io/codesquadllc'>@codesquadllc</a>) on <a href='http://codepen.io'>CodePen</a>.
+</p>
+</div>
+<h3>Perspective Origin</h3>
+<p>As with setting a <code>transform-origin</code> you can also set a <code>perspective-origin</code>. The same values used for the <code>transform-origin</code> property may also be used with the <code>perspective-origin</code> property, and maintain the same relationship to the element. The large difference between the two falls where the origin of a transform determines the coordinates used to calculate the change of a transform, while the origin of a perspective identifies the coordinates of the vanishing point of a transform.</p>
+<h6>HTML</h6>
+<pre class="highlight html"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1&#x000A;2&#x000A;3&#x000A;4&#x000A;5&#x000A;6&#x000A;7&#x000A;8&#x000A;9&#x000A;10</pre></td><td class="rouge-code"><pre><span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"original original-1"</span><span class="nt">&gt;</span>&#x000A;  <span class="nt">&lt;figure</span> <span class="na">class=</span><span class="s">"box"</span><span class="nt">&gt;</span>Box 1<span class="nt">&lt;/figure&gt;</span>&#x000A;<span class="nt">&lt;/div&gt;</span>&#x000A;<span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"original original-2"</span><span class="nt">&gt;</span>&#x000A;  <span class="nt">&lt;figure</span> <span class="na">class=</span><span class="s">"box"</span><span class="nt">&gt;</span>Box 2<span class="nt">&lt;/figure&gt;</span>&#x000A;<span class="nt">&lt;/div&gt;</span>&#x000A;<span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"original original-3"</span><span class="nt">&gt;</span>&#x000A;  <span class="nt">&lt;figure</span> <span class="na">class=</span><span class="s">"box"</span><span class="nt">&gt;</span>Box 3<span class="nt">&lt;/figure&gt;</span>&#x000A;<span class="nt">&lt;/div&gt;</span>&#x000A;</pre></td></tr></tbody></table>
+              </code></pre>
+<h6>CSS</h6>
+<pre class="highlight css"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1&#x000A;2&#x000A;3&#x000A;4&#x000A;5&#x000A;6&#x000A;7&#x000A;8&#x000A;9&#x000A;10&#x000A;11&#x000A;12&#x000A;13&#x000A;14&#x000A;15&#x000A;16</pre></td><td class="rouge-code"><pre><span class="nc">.original</span> <span class="p">{</span>&#x000A;  <span class="nl">perspective</span><span class="p">:</span> <span class="m">200px</span><span class="p">;</span>&#x000A;<span class="p">}</span>&#x000A;<span class="nc">.box</span> <span class="p">{</span>&#x000A;  <span class="nl">transform</span><span class="p">:</span> <span class="n">rotateX</span><span class="p">(</span><span class="m">45deg</span><span class="p">);</span>&#x000A;<span class="p">}</span>&#x000A;<span class="nc">.original-1</span> <span class="p">{</span>&#x000A;  <span class="nl">perspective-origin</span><span class="p">:</span> <span class="m">0</span> <span class="m">0</span><span class="p">;</span>&#x000A;<span class="p">}</span>&#x000A;<span class="nc">.original-2</span> <span class="p">{</span>&#x000A;  <span class="nl">perspective-origin</span><span class="p">:</span> <span class="m">75%</span> <span class="m">75%</span><span class="p">;</span>&#x000A;<span class="p">}</span>&#x000A;<span class="nc">.original-3</span> <span class="p">{</span>&#x000A;  <span class="nl">perspective-origin</span><span class="p">:</span> <span class="m">20px</span> <span class="m">40px</span><span class="p">;</span>&#x000A;<span class="p">}</span>&#x000A;</pre></td></tr></tbody></table>
+              </code></pre>
+<div class='note'>
+<h4 class='demo-title'>Perspective Origin Demo</h4>
+<p class='codepen' data-default-tab='result' data-height='216' data-slug-hash='nyBJt' data-theme-id='5990'>
+See the Pen <a href='http://codepen.io/codesquadllc/pen/nyBJt/'>Perspective Origin</a> by CodeSquad LLC (<a href='http://codepen.io/codesquadllc'>@codesquadllc</a>) on <a href='http://codepen.io'>CodePen</a>.
+</p>
+</div>
+<h2 id='three-dimensional-transforms'>3D Transforms</h2>
+<p>Working with two-dimensional transforms we are able to alter elements on the horizontal and vertical axes, however there is another axis along which we can transform elements. Using <a href="http://24ways.org/2010/intro-to-css-3d-transforms" rel="nofollow">three-dimensional transforms</a> we can change elements on the <code>z</code> axis, giving us control of depth as well as length and width.</p>
+<h3>3D Rotate</h3>
+<p>So far we&#8217;ve discussed how to rotate an object either clockwise or counterclockwise on a flat plane. With three-dimensional transforms we can rotate an element around any axes. To do so, we use three new <code>transform</code> values, including <code>rotateX</code>, <code>rotateY</code>, and <code>rotateZ</code>.</p>
+<p>Using the <code>rotateX</code> value allows you to rotate an element around the <code>x</code> axis, as if it were being bent in half horizontally. Using the <code>rotateY</code> value allows you to rotate an element around the <code>y</code> axis, as if it were being bent in half vertically. Lastly, using the <code>rotateZ</code> value allows an element to be rotated around the <code>z</code> axis.</p>
+<p>As with the general <code>rotate</code> value before, positive values will rotate the element around its dedicated axis clockwise, while negative values will rotate the element counterclockwise.</p>
+<h6>HTML</h6>
+<pre class="highlight html"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1&#x000A;2&#x000A;3&#x000A;4</pre></td><td class="rouge-code"><pre><span class="nt">&lt;figure</span> <span class="na">class=</span><span class="s">"box-1"</span><span class="nt">&gt;</span>Box 1<span class="nt">&lt;/figure&gt;</span>&#x000A;<span class="nt">&lt;figure</span> <span class="na">class=</span><span class="s">"box-2"</span><span class="nt">&gt;</span>Box 2<span class="nt">&lt;/figure&gt;</span>&#x000A;<span class="nt">&lt;figure</span> <span class="na">class=</span><span class="s">"box-3"</span><span class="nt">&gt;</span>Box 3<span class="nt">&lt;/figure&gt;</span>&#x000A;</pre></td></tr></tbody></table>
+              </code></pre>
+<h6>CSS</h6>
+<pre class="highlight css"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1&#x000A;2&#x000A;3&#x000A;4&#x000A;5&#x000A;6&#x000A;7&#x000A;8&#x000A;9&#x000A;10</pre></td><td class="rouge-code"><pre><span class="nc">.box-1</span> <span class="p">{</span>&#x000A;  <span class="nl">transform</span><span class="p">:</span> <span class="n">perspective</span><span class="p">(</span><span class="m">200px</span><span class="p">)</span> <span class="n">rotateX</span><span class="p">(</span><span class="m">45deg</span><span class="p">);</span>&#x000A;<span class="p">}</span>&#x000A;<span class="nc">.box-2</span> <span class="p">{</span>&#x000A;  <span class="nl">transform</span><span class="p">:</span> <span class="n">perspective</span><span class="p">(</span><span class="m">200px</span><span class="p">)</span> <span class="n">rotateY</span><span class="p">(</span><span class="m">45deg</span><span class="p">);</span>&#x000A;<span class="p">}</span>&#x000A;<span class="nc">.box-3</span> <span class="p">{</span>&#x000A;  <span class="nl">transform</span><span class="p">:</span> <span class="n">perspective</span><span class="p">(</span><span class="m">200px</span><span class="p">)</span> <span class="n">rotateZ</span><span class="p">(</span><span class="m">45deg</span><span class="p">);</span>&#x000A;<span class="p">}</span>&#x000A;</pre></td></tr></tbody></table>
+              </code></pre>
+<div class='note'>
+<h4 class='demo-title'>3D Rotate Demo</h4>
+<p class='codepen' data-default-tab='result' data-height='222' data-slug-hash='bmayf' data-theme-id='5990'>
+See the Pen <a href='http://codepen.io/codesquadllc/pen/bmayf/'>3D Rotate</a> by CodeSquad LLC (<a href='http://codepen.io/codesquadllc'>@codesquadllc</a>) on <a href='http://codepen.io'>CodePen</a>.
+</p>
+</div>
+<h3>3D Scale</h3>
+<p>By using the <code>scaleZ</code> three-dimensional transform elements may be scaled on the <code>z</code> axis. This isn&#8217;t extremely exciting when no other three-dimensional transforms are in place, as there is nothing in particular to scale. In the demonstration below the elements are being scaled up and down on the <code>z</code> axis, however the <code>rotateX</code> value is added in order to see the behavior of the <code>scaleZ</code> value. When removing the <code>rotateX</code> in this case, the elements will appear to be unchanged.</p>
+<h6>HTML</h6>
+<pre class="highlight html"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1&#x000A;2&#x000A;3</pre></td><td class="rouge-code"><pre><span class="nt">&lt;figure</span> <span class="na">class=</span><span class="s">"box-1"</span><span class="nt">&gt;</span>Box 1<span class="nt">&lt;/figure&gt;</span>&#x000A;<span class="nt">&lt;figure</span> <span class="na">class=</span><span class="s">"box-2"</span><span class="nt">&gt;</span>Box 2<span class="nt">&lt;/figure&gt;</span>&#x000A;</pre></td></tr></tbody></table>
+              </code></pre>
+<h6>CSS</h6>
+<pre class="highlight css"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1&#x000A;2&#x000A;3&#x000A;4&#x000A;5&#x000A;6&#x000A;7</pre></td><td class="rouge-code"><pre><span class="nc">.box-1</span> <span class="p">{</span>&#x000A;  <span class="nl">transform</span><span class="p">:</span> <span class="n">perspective</span><span class="p">(</span><span class="m">200px</span><span class="p">)</span> <span class="n">scaleZ</span><span class="p">(</span><span class="m">1.75</span><span class="p">)</span> <span class="n">rotateX</span><span class="p">(</span><span class="m">45deg</span><span class="p">);</span>&#x000A;<span class="p">}</span>&#x000A;<span class="nc">.box-2</span> <span class="p">{</span>&#x000A;  <span class="nl">transform</span><span class="p">:</span> <span class="n">perspective</span><span class="p">(</span><span class="m">200px</span><span class="p">)</span> <span class="n">scaleZ</span><span class="p">(</span><span class="m">.25</span><span class="p">)</span> <span class="n">rotateX</span><span class="p">(</span><span class="m">45deg</span><span class="p">);</span>&#x000A;<span class="p">}</span>&#x000A;</pre></td></tr></tbody></table>
+              </code></pre>
+<div class='note'>
+<h4 class='demo-title'>3D Scale Demo</h4>
+<p class='codepen' data-default-tab='result' data-height='216' data-slug-hash='DIlFd' data-theme-id='5990'>
+See the Pen <a href='http://codepen.io/codesquadllc/pen/DIlFd/'>3D Scale</a> by CodeSquad LLC (<a href='http://codepen.io/codesquadllc'>@codesquadllc</a>) on <a href='http://codepen.io'>CodePen</a>.
+</p>
+</div>
+<h3>3D Translate</h3>
+<p>Elements may also be translated on the <code>z</code> axis using the <code>translateZ</code> value. A negative value here will push an element further away on the <code>z</code> axis, resulting in a smaller element. Using a positive value will pull an element closer on the <code>z</code> axis, resulting in a larger element.</p>
+<p>While this may appear to be very similar to that of the two-dimensional transform <code>scale</code> value, it is actually quite different. The transform is taking place on the <code>z</code> axis, not the <code>x</code> or <code>y</code> axes. When working with three-dimensional transforms, being able to move an element on the <code>z</code> axis does have great benefits, like when building the cube below for example.</p>
+<h6>HTML</h6>
+<pre class="highlight html"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1&#x000A;2&#x000A;3</pre></td><td class="rouge-code"><pre><span class="nt">&lt;figure</span> <span class="na">class=</span><span class="s">"box-1"</span><span class="nt">&gt;</span>Box 1<span class="nt">&lt;/figure&gt;</span>&#x000A;<span class="nt">&lt;figure</span> <span class="na">class=</span><span class="s">"box-2"</span><span class="nt">&gt;</span>Box 2<span class="nt">&lt;/figure&gt;</span>&#x000A;</pre></td></tr></tbody></table>
+              </code></pre>
+<h6>CSS</h6>
+<pre class="highlight css"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1&#x000A;2&#x000A;3&#x000A;4&#x000A;5&#x000A;6&#x000A;7</pre></td><td class="rouge-code"><pre><span class="nc">.box-1</span> <span class="p">{</span>&#x000A;  <span class="nl">transform</span><span class="p">:</span> <span class="n">perspective</span><span class="p">(</span><span class="m">200px</span><span class="p">)</span> <span class="n">translateZ</span><span class="p">(</span><span class="m">-50px</span><span class="p">);</span>&#x000A;<span class="p">}</span>&#x000A;<span class="nc">.box-2</span> <span class="p">{</span>&#x000A;  <span class="nl">transform</span><span class="p">:</span> <span class="n">perspective</span><span class="p">(</span><span class="m">200px</span><span class="p">)</span> <span class="n">translateZ</span><span class="p">(</span><span class="m">50px</span><span class="p">);</span>&#x000A;<span class="p">}</span>&#x000A;</pre></td></tr></tbody></table>
+              </code></pre>
+<div class='note'>
+<h4 class='demo-title'>3D Translate Demo</h4>
+<p class='codepen' data-default-tab='result' data-height='222' data-slug-hash='msBJC' data-theme-id='5990'>
+See the Pen <a href='http://codepen.io/codesquadllc/pen/msBJC/'>3D Translate</a> by CodeSquad LLC (<a href='http://codepen.io/codesquadllc'>@codesquadllc</a>) on <a href='http://codepen.io'>CodePen</a>.
+</p>
+</div>
+<h3>3D Skew</h3>
+<p>Skew is the one two-dimensional transform that <strong>cannot</strong> be transformed on a three-dimensional scale. Elements may be skewed on the <code>x</code> and <code>y</code> axis, then transformed three-dimensionally as wished, but they cannot be skewed on the <code>z</code> axis.</p>
+<h3>Shorthand 3D Transforms</h3>
+<p>As with combining two-dimensional transforms, there are also properties to write out shorthand three-dimensional transforms. These properties include <code>rotate3d</code>, <code>scale3d</code>, <code>transition3d</code>, and <code>matrix3d</code>. These properties do require a bit more math, as well as a strong <a href="https://developer.mozilla.org/en/CSS/transform-function" rel="nofollow">understanding</a> of the matrices behind each transform. Should you be interested in looking a bit deeper into them, please do!</p>
+<h2 id='transform-style'>Transform Style</h2>
+<p>On occasion three-dimensional transforms will be applied on an element that is nested within a parent element which is also being transformed. In this event, the nested, transformed elements will not appear in their own three-dimensional space. To allow nested elements to transform in their own three-dimensional plane use the <code>transform-style</code> property with the <code>preserve-3d</code> value.</p>
+<p>The <code>transform-style</code> property needs to be placed on the parent element, above any nested transforms. The <code>preserve-3d</code> value allows the transformed children elements to appear in their own three-dimensional plane while the <code>flat</code> value forces the transformed children elements to lie flat on the two-dimensional plane.</p>
+<h6>HTML</h6>
+<pre class="highlight html"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1&#x000A;2&#x000A;3&#x000A;4&#x000A;5&#x000A;6&#x000A;7</pre></td><td class="rouge-code"><pre><span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"rotate three-d"</span><span class="nt">&gt;</span>&#x000A;  <span class="nt">&lt;figure</span> <span class="na">class=</span><span class="s">"box"</span><span class="nt">&gt;</span>Box 1<span class="nt">&lt;/figure&gt;</span>&#x000A;<span class="nt">&lt;/div&gt;</span>&#x000A;<span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"rotate"</span><span class="nt">&gt;</span>&#x000A;  <span class="nt">&lt;figure</span> <span class="na">class=</span><span class="s">"box"</span><span class="nt">&gt;</span>Box 2<span class="nt">&lt;/figure&gt;</span>&#x000A;<span class="nt">&lt;/div&gt;</span>&#x000A;</pre></td></tr></tbody></table>
+              </code></pre>
+<h6>CSS</h6>
+<pre class="highlight css"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1&#x000A;2&#x000A;3&#x000A;4&#x000A;5&#x000A;6&#x000A;7&#x000A;8&#x000A;9&#x000A;10&#x000A;11</pre></td><td class="rouge-code"><pre><span class="nc">.rotate</span> <span class="p">{</span>&#x000A;  <span class="nl">transform</span><span class="p">:</span> <span class="n">perspective</span><span class="p">(</span><span class="m">200px</span><span class="p">)</span> <span class="n">rotateY</span><span class="p">(</span><span class="m">45deg</span><span class="p">);</span>&#x000A;<span class="p">}</span>&#x000A;<span class="nc">.three-d</span> <span class="p">{</span>&#x000A;  <span class="nl">transform-style</span><span class="p">:</span> <span class="n">preserve-3d</span><span class="p">;</span>&#x000A;<span class="p">}</span>&#x000A;<span class="nc">.box</span> <span class="p">{</span>&#x000A;  <span class="nl">transform</span><span class="p">:</span> <span class="n">rotateX</span><span class="p">(</span><span class="m">15deg</span><span class="p">)</span> <span class="n">translateZ</span><span class="p">(</span><span class="m">20px</span><span class="p">);</span>&#x000A;  <span class="nl">transform-origin</span><span class="p">:</span> <span class="m">0</span> <span class="m">0</span><span class="p">;</span>&#x000A;<span class="p">}</span>&#x000A;</pre></td></tr></tbody></table>
+              </code></pre>
+<div class='note'>
+<h4 class='demo-title'>Transform Style Demo</h4>
+<p class='codepen' data-default-tab='result' data-height='216' data-slug-hash='jBhbk' data-theme-id='5990'>
+See the Pen <a href='http://codepen.io/codesquadllc/pen/jBhbk/'>Transform Style</a> by CodeSquad LLC (<a href='http://codepen.io/codesquadllc'>@codesquadllc</a>) on <a href='http://codepen.io'>CodePen</a>.
+</p>
+</div>
+<p>To see an additional example of the <code>transform-style</code> property in action check out the WebKit <a href="http://www.webkit.org/blog-files/3d-transforms/transform-style.html" rel="nofollow">explanation</a>.</p>
+<h2 id='backface-visibility'>Backface Visibility</h2>
+<p>When working with three-dimensional transforms, elements will occasionally be transformed in a way that causes them to face away from the screen. This may be caused by setting the <code>rotateY(180deg)</code> value for example. By default these elements are shown from the back. So if you prefer not to see these elements at all, set the <code>backface-visibility</code> property to <code>hidden</code>, and you will hide the element whenever it is facing away from the screen.</p>
+<p>The other value to <code>backface-visibility</code> is <code>visible</code> which is the default value, always displaying an element, no matter which direction it faces.</p>
+<p>In the demonstration below notice how the second box isn&#8217;t displayed because <code>backface-visibility: hidden;</code> declaration has been set. The <code>backface-visibility</code> property takes even more significance when using <a href="http://css-tricks.com/almanac/properties/b/backface-visibility/" rel="nofollow">animations</a>.</p>
+<h6>HTML</h6>
+<pre class="highlight html"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1&#x000A;2&#x000A;3</pre></td><td class="rouge-code"><pre><span class="nt">&lt;figure</span> <span class="na">class=</span><span class="s">"box-1"</span><span class="nt">&gt;</span>Box 1<span class="nt">&lt;/figure&gt;</span>&#x000A;<span class="nt">&lt;figure</span> <span class="na">class=</span><span class="s">"box-2"</span><span class="nt">&gt;</span>Box 2<span class="nt">&lt;/figure&gt;</span>&#x000A;</pre></td></tr></tbody></table>
+              </code></pre>
+<h6>CSS</h6>
+<pre class="highlight css"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1&#x000A;2&#x000A;3&#x000A;4&#x000A;5&#x000A;6&#x000A;7&#x000A;8</pre></td><td class="rouge-code"><pre><span class="nc">.box-1</span> <span class="p">{</span>&#x000A;  <span class="nl">transform</span><span class="p">:</span> <span class="n">rotateY</span><span class="p">(</span><span class="m">180deg</span><span class="p">);</span>&#x000A;<span class="p">}</span>&#x000A;<span class="nc">.box-2</span> <span class="p">{</span>&#x000A;  <span class="nl">backface-visibility</span><span class="p">:</span> <span class="nb">hidden</span><span class="p">;</span>&#x000A;  <span class="nl">transform</span><span class="p">:</span> <span class="n">rotateY</span><span class="p">(</span><span class="m">180deg</span><span class="p">);</span>&#x000A;<span class="p">}</span>&#x000A;</pre></td></tr></tbody></table>
+              </code></pre>
+<div class='note'>
+<h4 class='demo-title'>Backface Visibility Demo</h4>
+<p class='codepen' data-default-tab='result' data-height='216' data-slug-hash='mnizD' data-theme-id='5990'>
+See the Pen <a href='http://codepen.io/codesquadllc/pen/mnizD/'>Backface Visibility</a> by CodeSquad LLC (<a href='http://codepen.io/codesquadllc'>@codesquadllc</a>) on <a href='http://codepen.io'>CodePen</a>.
+</p>
+</div>
+<div class='note note-box'>
+<h3>3D Cube Demo</h3>
+<h6>HTML</h6>
+<pre class="highlight html"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1&#x000A;2&#x000A;3&#x000A;4&#x000A;5&#x000A;6&#x000A;7&#x000A;8&#x000A;9&#x000A;10&#x000A;11</pre></td><td class="rouge-code"><pre><span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"cube-container"</span><span class="nt">&gt;</span>&#x000A;  <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"cube"</span><span class="nt">&gt;</span>&#x000A;    <span class="nt">&lt;figure</span> <span class="na">class=</span><span class="s">"side front"</span><span class="nt">&gt;</span>1<span class="nt">&lt;/figure&gt;</span>&#x000A;    <span class="nt">&lt;figure</span> <span class="na">class=</span><span class="s">"side back"</span><span class="nt">&gt;</span>2<span class="nt">&lt;/figure&gt;</span>&#x000A;    <span class="nt">&lt;figure</span> <span class="na">class=</span><span class="s">"side left"</span><span class="nt">&gt;</span>3<span class="nt">&lt;/figure&gt;</span>&#x000A;    <span class="nt">&lt;figure</span> <span class="na">class=</span><span class="s">"side right"</span><span class="nt">&gt;</span>4<span class="nt">&lt;/figure&gt;</span>&#x000A;    <span class="nt">&lt;figure</span> <span class="na">class=</span><span class="s">"side top"</span><span class="nt">&gt;</span>5<span class="nt">&lt;/figure&gt;</span>&#x000A;    <span class="nt">&lt;figure</span> <span class="na">class=</span><span class="s">"side bottom"</span><span class="nt">&gt;</span>6<span class="nt">&lt;/figure&gt;</span>&#x000A;  <span class="nt">&lt;/div&gt;</span>&#x000A;<span class="nt">&lt;/div&gt;</span>&#x000A;</pre></td></tr></tbody></table>
+                </code></pre>
+<h6>CSS</h6>
+<pre class="highlight css"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1&#x000A;2&#x000A;3&#x000A;4&#x000A;5&#x000A;6&#x000A;7&#x000A;8&#x000A;9&#x000A;10&#x000A;11&#x000A;12&#x000A;13&#x000A;14&#x000A;15&#x000A;16&#x000A;17&#x000A;18&#x000A;19&#x000A;20&#x000A;21&#x000A;22&#x000A;23&#x000A;24&#x000A;25&#x000A;26&#x000A;27&#x000A;28&#x000A;29&#x000A;30&#x000A;31&#x000A;32&#x000A;33&#x000A;34&#x000A;35&#x000A;36&#x000A;37&#x000A;38&#x000A;39</pre></td><td class="rouge-code"><pre><span class="nc">.cube-container</span> <span class="p">{</span>&#x000A;  <span class="nl">height</span><span class="p">:</span> <span class="m">200px</span><span class="p">;</span>&#x000A;  <span class="nl">perspective</span><span class="p">:</span> <span class="m">300</span><span class="p">;</span>&#x000A;  <span class="nl">position</span><span class="p">:</span> <span class="nb">relative</span><span class="p">;</span>&#x000A;  <span class="nl">width</span><span class="p">:</span> <span class="m">200px</span><span class="p">;</span>&#x000A;<span class="p">}</span>&#x000A;<span class="nc">.cube</span> <span class="p">{</span>  &#x000A;  <span class="nl">height</span><span class="p">:</span> <span class="m">100%</span><span class="p">;</span>&#x000A;  <span class="nl">position</span><span class="p">:</span> <span class="nb">absolute</span><span class="p">;</span>&#x000A;  <span class="nl">transform</span><span class="p">:</span> <span class="n">translateZ</span><span class="p">(</span><span class="m">-100px</span><span class="p">);</span>&#x000A;  <span class="nl">transform-style</span><span class="p">:</span> <span class="n">preserve-3d</span><span class="p">;</span>&#x000A;  <span class="nl">width</span><span class="p">:</span> <span class="m">100%</span><span class="p">;</span>&#x000A;<span class="p">}</span>&#x000A;<span class="nc">.side</span> <span class="p">{</span>&#x000A;  <span class="nl">background</span><span class="p">:</span> <span class="n">rgba</span><span class="p">(</span><span class="m">45</span><span class="p">,</span> <span class="m">179</span><span class="p">,</span> <span class="m">74</span><span class="p">,</span> <span class="m">.3</span><span class="p">);</span>&#x000A;  <span class="nl">border</span><span class="p">:</span> <span class="m">2px</span> <span class="nb">solid</span> <span class="m">#2db34a</span><span class="p">;</span>&#x000A;  <span class="nl">height</span><span class="p">:</span> <span class="m">196px</span><span class="p">;</span>&#x000A;  <span class="nl">position</span><span class="p">:</span> <span class="nb">absolute</span><span class="p">;</span>&#x000A;  <span class="nl">width</span><span class="p">:</span> <span class="m">196px</span><span class="p">;</span>&#x000A;<span class="p">}</span>&#x000A;<span class="nc">.front</span> <span class="p">{</span>&#x000A;  <span class="nl">transform</span><span class="p">:</span> <span class="n">translateZ</span><span class="p">(</span><span class="m">100px</span><span class="p">);</span>&#x000A;<span class="p">}</span>&#x000A;<span class="nc">.back</span> <span class="p">{</span>&#x000A;  <span class="nl">transform</span><span class="p">:</span> <span class="n">rotateX</span><span class="p">(</span><span class="m">180deg</span><span class="p">)</span> <span class="n">translateZ</span><span class="p">(</span><span class="m">100px</span><span class="p">);</span>&#x000A;<span class="p">}</span>&#x000A;<span class="nc">.left</span> <span class="p">{</span>&#x000A;  <span class="nl">transform</span><span class="p">:</span> <span class="n">rotateY</span><span class="p">(</span><span class="m">-90deg</span><span class="p">)</span> <span class="n">translateZ</span><span class="p">(</span><span class="m">100px</span><span class="p">);</span>&#x000A;<span class="p">}</span>&#x000A;<span class="nc">.right</span> <span class="p">{</span>&#x000A;  <span class="nl">transform</span><span class="p">:</span> <span class="n">rotateY</span><span class="p">(</span><span class="m">90deg</span><span class="p">)</span> <span class="n">translateZ</span><span class="p">(</span><span class="m">100px</span><span class="p">);</span>&#x000A;<span class="p">}</span>&#x000A;<span class="nc">.top</span> <span class="p">{</span>&#x000A;  <span class="nl">transform</span><span class="p">:</span> <span class="n">rotateX</span><span class="p">(</span><span class="m">90deg</span><span class="p">)</span> <span class="n">translateZ</span><span class="p">(</span><span class="m">100px</span><span class="p">);</span>&#x000A;<span class="p">}</span>&#x000A;<span class="nc">.bottom</span> <span class="p">{</span>&#x000A;  <span class="nl">transform</span><span class="p">:</span> <span class="n">rotateX</span><span class="p">(</span><span class="m">-90deg</span><span class="p">)</span> <span class="n">translateZ</span><span class="p">(</span><span class="m">100px</span><span class="p">);</span>&#x000A;<span class="p">}</span>&#x000A;</pre></td></tr></tbody></table>
+                </code></pre>
+<h4 class='demo-title'>Demo</h4>
+<div class='demo-code'>
+<p class='codepen' data-default-tab='result' data-height='306' data-slug-hash='uerdD' data-theme-id='5990'>
+See the Pen <a href='http://codepen.io/codesquadllc/pen/uerdD/'>3D Cube</a> by CodeSquad LLC (<a href='http://codepen.io/codesquadllc'>@codesquadllc</a>) on <a href='http://codepen.io'>CodePen</a>.
+</p>
+</div>
+</div>
+<h2>Resources <abbr title="and">&amp;</abbr> Links</h2>
+<ul class='list-column-2 group'>
+<li>
+<a href='http://www.css3files.com/transform/' rel='nofollow'>Transform Property</a>
+via CSS3 Files
+</li>
+<li>
+<a href='http://dev.opera.com/articles/view/understanding-the-css-transforms-matrix/' rel='nofollow'>Understanding the CSS Transforms Matrix</a>
+via Dev.Opera
+</li>
+<li>
+<a href='http://24ways.org/2010/intro-to-css-3d-transforms' rel='nofollow'>An Introduction to CSS 3-D Transforms</a>
+via 24 Ways
+</li>
+<li>
+<a href='https://developer.mozilla.org/en/CSS/transform-function' rel='nofollow'>Transform Function</a>
+via Mozilla Developer Network
+</li>
+<li>
+<a href='http://www.webkit.org/blog-files/3d-transforms/transform-style.html' rel='nofollow'>Transform Style</a>
+via WebKit
+</li>
+<li>
+<a href='http://css-tricks.com/almanac/properties/b/backface-visibility/' rel='nofollow'>Backface Visibility</a>
+via CSS-Tricks
+</li>
+</ul>
+<ul class='share' data-js='share' data-permalink='<footer class='primary-footer'>
+<div class='clamp'>
+<small>&copy; CodeSquad LLC</small>
+<div class='enjoy-cta'>
+Enjoy these lessons?
+<a class='twitter-follow-button' data-lang='en' data-show-count='false' data-size='large' href='https://twitter.com/codesquadllc'>
+Follow @codesquadllc
+</a>
+</div>
+</div>
+<li>
+<a class='share-twitter' data-js='share-twitter' href='#' rel='nofollow'>
+Share on Twitter
+</a>
+</li>
+<li>
+<a class='share-facebook' data-js='share-facebook' href='#' rel='nofollow'>
+Share on Facebook
+</a>
+</li>
+<li>
+<a class='share-google' data-js='share-google' href='#' rel='nofollow'>
+Share on Google+
+</a>
+</li>
+</ul>
+</article>
+<nav class='pagination container'>
+<ul>
+<li class='pagination-prev'>
+<a href='../jquery/index.html' rel='prev'>
+<strong>Lesson 6</strong>
+<span>jQuery</span>
+</a>
+</li>
+<li class='pagination-next'>
+<a href='../transitions-animations/index.html' rel='next'>
+<strong>Lesson 8</strong>
+<span>Transitions &amp; Animations</span>
+</a>
+</li>
+</ul>
+</nav>
+<section class='lead-promo'>
+<div class='container'>
+<h2>Learn More <span>HTML &amp; CSS</span> or Study Other Topics</h2>
+<p>Learning how to code HTML <abbr title="and">&amp;</abbr> CSS and building successful websites can be challenging, and at times additional help and explanation can go a long way. Fortunately there are plenty of online schools, boot camps, workshops, and the alike, that can help.</p>
+<p>Select your topic of interest below and I will recommend a course I believe will provide the best learning opportunity for you.</p>
+<div class='note lead-recommended-courses'>
+<div class='note-box'>
+<h3>Select Your Topic of Interest:</h3>
+<form class='margin-bottom'>
+<div class='form-toggles form-toggles-wide'>
+<input data-toggle-control='topic' hidden name='interest' required type='radio' value='empty'>
+<div class='form-toggle-row'>
+<input data-toggle-control='topic' hidden id='design-product' name='interest' required type='radio' value='Product &amp;amp; Design'>
+<label class='form-toggle' for='design-product' onClick="_gaq.push(['_trackEvent', 'Course Filter', 'Design &amp; Product', 'Transforms']);">Design &amp; Product</label>
+<input data-toggle-control='topic' hidden id='front-end-development' name='interest' required type='radio' value='Front-end Development'>
+<label class='form-toggle' for='front-end-development' onClick="_gaq.push(['_trackEvent', 'Course Filter', 'Front-end Development', 'Transforms']);">Front-end Development</label>
+<input data-toggle-control='topic' hidden id='web-development' name='interest' required type='radio' value='Web Development'>
+<label class='form-toggle' for='web-development' onClick="_gaq.push(['_trackEvent', 'Course Filter', 'Web Development', 'Transforms']);">Web Development</label>
+</div>
+<div class='form-toggle-row'>
+<input data-toggle-control='topic' hidden id='mobile-development' name='interest' required type='radio' value='Mobile Development'>
+<label class='form-toggle' for='mobile-development' onClick="_gaq.push(['_trackEvent', 'Course Filter', 'Mobile Development', 'Transforms']);">Mobile Development</label>
+<input data-toggle-control='topic' hidden id='data-marketing' name='interest' required type='radio' value='Data &amp;amp; Marketing'>
+<label class='form-toggle' for='data-marketing' onClick="_gaq.push(['_trackEvent', 'Course Filter', 'Data &amp; Marketing', 'Transforms']);">Data &amp; Marketing</label>
+<input data-toggle-control='topic' hidden id='business-operations' name='interest' required type='radio' value='Business &amp;amp; Operations'>
+<label class='form-toggle' for='business-operations' onClick="_gaq.push(['_trackEvent', 'Course Filter', 'Business &amp; Operations', 'Transforms']);">Business &amp; Operations</label>
+</div>
+</div>
+</form>
+<h3>Your Course Recommendations:</h3>
+ <div class='recommended-courses-empty' data-toggle-topic='empty' hidden>
+Select a topic above to view your course recommendations.
+</div>
+<div data-toggle-topic='Business &amp;amp; Operations' hidden>
+<p>Based on your interest in Business &amp; Operations I recommend checking out the following <a href="https://treehouse.7eer.net/c/388403/263461/3944" rel="nofollow" target="_blank" onClick="_gaq.push(['_trackEvent', 'Treehouse Course Select', 'Treehouse Courses', 'Transforms']);">Treehouse courses</a>:</p>
+<ul class='lead-list-cols group'>
+<li>
+<a class='recommended-course-title' href='https://treehouse.7eer.net/c/388403/294890/3944' onClick="_gaq.push(['_trackEvent', 'Treehouse Course Select', 'How to Start a Business', 'Transforms']);" rel='nofollow' target='_blank'>How to Start a Business</a>
+<div class='recommended-course-details'>Beginner</div>
+</li>
+<li>
+<a class='recommended-course-title' href='https://treehouse.7eer.net/c/388403/294890/3944' onClick="_gaq.push(['_trackEvent', 'Treehouse Course Select', 'How to Write a Business Plan', 'Transforms']);" rel='nofollow' target='_blank'>How to Write a Business Plan</a>
+<div class='recommended-course-details'>Beginner</div>
+</li>
+<li>
+<a class='recommended-course-title' href='https://treehouse.7eer.net/c/388403/294890/3944' onClick="_gaq.push(['_trackEvent', 'Treehouse Course Select', 'How to Market Your Business', 'Transforms']);" rel='nofollow' target='_blank'>How to Market Your Business</a>
+<div class='recommended-course-details'>Intermediate</div>
+</li>
+<li>
+<a class='recommended-course-title' href='https://treehouse.7eer.net/c/388403/294890/3944' onClick="_gaq.push(['_trackEvent', 'Treehouse Course Select', 'How to Run a Web Design Business', 'Transforms']);" rel='nofollow' target='_blank'>How to Run a Web Design Business</a>
+<div class='recommended-course-details'>Advanced</div>
+</li>
+<li>
+<a class='recommended-course-title' href='https://treehouse.7eer.net/c/388403/294890/3944' onClick="_gaq.push(['_trackEvent', 'Treehouse Course Select', 'Building Your Resume', 'Transforms']);" rel='nofollow' target='_blank'>Building Your Resume</a>
+<div class='recommended-course-details'>Beginner</div>
+</li>
+<li>
+<a class='recommended-course-title' href='https://treehouse.7eer.net/c/388403/294890/3944' onClick="_gaq.push(['_trackEvent', 'Treehouse Course Select', 'Scrum Basics', 'Transforms']);" rel='nofollow' target='_blank'>Scrum Basics</a>
+<div class='recommended-course-details'>Intermediate</div>
+</li>
+<li>
+<a class='recommended-course-title' href='https://treehouse.7eer.net/c/388403/294890/3944' onClick="_gaq.push(['_trackEvent', 'Treehouse Course Select', 'Careers Foundations', 'Transforms']);" rel='nofollow' target='_blank'>Careers Foundations</a>
+<div class='recommended-course-details'>Beginner</div>
+</li>
+<li>
+<a class='recommended-course-title' href='https://treehouse.7eer.net/c/388403/294890/3944' onClick="_gaq.push(['_trackEvent', 'Treehouse Course Select', 'SEO Basics', 'Transforms']);" rel='nofollow' target='_blank'>SEO Basics</a>
+<div class='recommended-course-details'>Beginner</div>
+</li>
+<li>
+<a class='recommended-course-title' href='https://treehouse.7eer.net/c/388403/294890/3944' onClick="_gaq.push(['_trackEvent', 'Treehouse Course Select', 'Copyright Basics', 'Transforms']);" rel='nofollow' target='_blank'>Copyright Basics</a>
+<div class='recommended-course-details'>Beginner</div>
+</li>
+<li>
+<a class='recommended-course-title' href='https://treehouse.7eer.net/c/388403/294890/3944' onClick="_gaq.push(['_trackEvent', 'Treehouse Course Select', 'How to Build Your Business Through Blogging', 'Transforms']);" rel='nofollow' target='_blank'>How to Build Your Business Through Blogging</a>
+<div class='recommended-course-details'>Beginner</div>
+</li>
+</ul>
+</div>
+<div data-toggle-topic='Data &amp;amp; Marketing' hidden>
+<p>Based on your interest in Data &amp; Marketing I recommend checking out the following <a href="https://treehouse.7eer.net/c/388403/263461/3944" rel="nofollow" target="_blank" onClick="_gaq.push(['_trackEvent', 'Treehouse Course Select', 'Treehouse Courses', 'Transforms']);">Treehouse courses</a>:</p>
+<ul class='lead-list-cols group'>
+<li>
+<a class='recommended-course-title' href='https://treehouse.7eer.net/c/388403/294890/3944' onClick="_gaq.push(['_trackEvent', 'Treehouse Course Select', 'Introduction to Big Data', 'Transforms']);" rel='nofollow' target='_blank'>Introduction to Big Data</a>
+<div class='recommended-course-details'>Intermediate</div>
+</li>
+<li>
+<a class='recommended-course-title' href='https://treehouse.7eer.net/c/388403/294890/3944' onClick="_gaq.push(['_trackEvent', 'Treehouse Course Select', 'Introduction to Data Security', 'Transforms']);" rel='nofollow' target='_blank'>Introduction to Data Security</a>
+<div class='recommended-course-details'>Beginner</div>
+</li>
+<li>
+<a class='recommended-course-title' href='https://treehouse.7eer.net/c/388403/294890/3944' onClick="_gaq.push(['_trackEvent', 'Treehouse Course Select', 'Data Science Basics', 'Transforms']);" rel='nofollow' target='_blank'>Data Science Basics</a>
+<div class='recommended-course-details'>Intermediate</div>
+</li>
+<li>
+<a class='recommended-course-title' href='https://treehouse.7eer.net/c/388403/294890/3944' onClick="_gaq.push(['_trackEvent', 'Treehouse Course Select', 'SQL Basics', 'Transforms']);" rel='nofollow' target='_blank'>SQL Basics</a>
+<div class='recommended-course-details'>Beginner</div>
+</li>
+<li>
+<a class='recommended-course-title' href='https://treehouse.7eer.net/c/388403/294890/3944' onClick="_gaq.push(['_trackEvent', 'Treehouse Course Select', 'Modifying Data with SQL', 'Transforms']);" rel='nofollow' target='_blank'>Modifying Data with SQL</a>
+<div class='recommended-course-details'>Beginner</div>
+</li>
+<li>
+<a class='recommended-course-title' href='https://treehouse.7eer.net/c/388403/294890/3944' onClick="_gaq.push(['_trackEvent', 'Treehouse Course Select', 'Reporting with SQL', 'Transforms']);" rel='nofollow' target='_blank'>Reporting with SQL</a>
+<div class='recommended-course-details'>Beginner</div>
+</li>
+<li>
+<a class='recommended-course-title' href='https://treehouse.7eer.net/c/388403/294890/3944' onClick="_gaq.push(['_trackEvent', 'Treehouse Course Select', 'Querying Relational Databases', 'Transforms']);" rel='nofollow' target='_blank'>Querying Relational Databases</a>
+<div class='recommended-course-details'>Intermediate</div>
+</li>
+<li>
+<a class='recommended-course-title' href='https://treehouse.7eer.net/c/388403/294890/3944' onClick="_gaq.push(['_trackEvent', 'Treehouse Course Select', 'Spreadsheet Basics', 'Transforms']);" rel='nofollow' target='_blank'>Spreadsheet Basics</a>
+<div class='recommended-course-details'>Beginner</div>
+</li>
+</ul>
+</div>
+<div data-toggle-topic='Product &amp;amp; Design' hidden>
+<p>Based on your interest in Product &amp; Design I recommend checking out the following <a href="https://treehouse.7eer.net/c/388403/263461/3944" rel="nofollow" target="_blank" onClick="_gaq.push(['_trackEvent', 'Treehouse Course Select', 'Treehouse Courses', 'Transforms']);">Treehouse courses</a>:</p>
+<ul class='lead-list-cols group'>
+<li>
+<a class='recommended-course-title' href='https://treehouse.7eer.net/c/388403/294890/3944' onClick="_gaq.push(['_trackEvent', 'Treehouse Course Select', 'Design Foundations', 'Transforms']);" rel='nofollow' target='_blank'>Design Foundations</a>
+<div class='recommended-course-details'>Beginner</div>
+</li>
+<li>
+<a class='recommended-course-title' href='https://treehouse.7eer.net/c/388403/294890/3944' onClick="_gaq.push(['_trackEvent', 'Treehouse Course Select', 'Aesthetic Foundations', 'Transforms']);" rel='nofollow' target='_blank'>Aesthetic Foundations</a>
+<div class='recommended-course-details'>Beginner</div>
+</li>
+<li>
+<a class='recommended-course-title' href='https://treehouse.7eer.net/c/388403/294890/3944' onClick="_gaq.push(['_trackEvent', 'Treehouse Course Select', 'Usability Foundations', 'Transforms']);" rel='nofollow' target='_blank'>Usability Foundations</a>
+<div class='recommended-course-details'>Beginner</div>
+</li>
+<li>
+<a class='recommended-course-title' href='https://treehouse.7eer.net/c/388403/294890/3944' onClick="_gaq.push(['_trackEvent', 'Treehouse Course Select', 'Web Typography', 'Transforms']);" rel='nofollow' target='_blank'>Web Typography</a>
+<div class='recommended-course-details'>Beginner</div>
+</li>
+<li>
+<a class='recommended-course-title' href='https://treehouse.7eer.net/c/388403/294890/3944' onClick="_gaq.push(['_trackEvent', 'Treehouse Course Select', 'UX Basics', 'Transforms']);" rel='nofollow' target='_blank'>UX Basics</a>
+<div class='recommended-course-details'>Beginner</div>
+</li>
+<li>
+<a class='recommended-course-title' href='https://treehouse.7eer.net/c/388403/294890/3944' onClick="_gaq.push(['_trackEvent', 'Treehouse Course Select', 'Researching User Needs', 'Transforms']);" rel='nofollow' target='_blank'>Researching User Needs</a>
+<div class='recommended-course-details'>Intermediate</div>
+</li>
+<li>
+<a class='recommended-course-title' href='https://treehouse.7eer.net/c/388403/294890/3944' onClick="_gaq.push(['_trackEvent', 'Treehouse Course Select', 'Sketch Basics', 'Transforms']);" rel='nofollow' target='_blank'>Sketch Basics</a>
+<div class='recommended-course-details'>Beginner</div>
+</li>
+<li>
+<a class='recommended-course-title' href='https://treehouse.7eer.net/c/388403/294890/3944' onClick="_gaq.push(['_trackEvent', 'Treehouse Course Select', 'Photoshop Foundations', 'Transforms']);" rel='nofollow' target='_blank'>Photoshop Foundations</a>
+<div class='recommended-course-details'>Beginner</div>
+</li>
+<li>
+<a class='recommended-course-title' href='https://treehouse.7eer.net/c/388403/294890/3944' onClick="_gaq.push(['_trackEvent', 'Treehouse Course Select', 'Illustrator Foundations', 'Transforms']);" rel='nofollow' target='_blank'>Illustrator Foundations</a>
+<div class='recommended-course-details'>Beginner</div>
+</li>
+<li>
+<a class='recommended-course-title' href='https://treehouse.7eer.net/c/388403/294890/3944' onClick="_gaq.push(['_trackEvent', 'Treehouse Course Select', 'Brand Identity Basics', 'Transforms']);" rel='nofollow' target='_blank'>Brand Identity Basics</a>
+<div class='recommended-course-details'>Beginner</div>
+</li>
+<li>
+<a class='recommended-course-title' href='https://treehouse.7eer.net/c/388403/294890/3944' onClick="_gaq.push(['_trackEvent', 'Treehouse Course Select', 'Web Accessibility Compliance', 'Transforms']);" rel='nofollow' target='_blank'>Web Accessibility Compliance</a>
+<div class='recommended-course-details'>Beginner</div>
+</li>
+</ul>
+</div>
+<div data-toggle-topic='Front-end Development' hidden>
+<p>Based on your interest in Front-end Development I recommend checking out the following <a href="https://treehouse.7eer.net/c/388403/263461/3944" rel="nofollow" target="_blank" onClick="_gaq.push(['_trackEvent', 'Treehouse Course Select', 'Treehouse Courses', 'Transforms']);">Treehouse courses</a>:</p>
+<ul class='lead-list-cols group'>
+<li>
+<a class='recommended-course-title' href='https://treehouse.7eer.net/c/388403/294890/3944' onClick="_gaq.push(['_trackEvent', 'Treehouse Course Select', 'JavaScript Basics', 'Transforms']);" rel='nofollow' target='_blank'>JavaScript Basics</a>
+<div class='recommended-course-details'>Beginner</div>
+</li>
+<li>
+<a class='recommended-course-title' href='https://treehouse.7eer.net/c/388403/294890/3944' onClick="_gaq.push(['_trackEvent', 'Treehouse Course Select', 'Object-Oriented JavaScript', 'Transforms']);" rel='nofollow' target='_blank'>Object-Oriented JavaScript</a>
+<div class='recommended-course-details'>Intermediate</div>
+</li>
+<li>
+<a class='recommended-course-title' href='https://treehouse.7eer.net/c/388403/294890/3944' onClick="_gaq.push(['_trackEvent', 'Treehouse Course Select', 'React Basics', 'Transforms']);" rel='nofollow' target='_blank'>React Basics</a>
+<div class='recommended-course-details'>Intermediate</div>
+</li>
+<li>
+<a class='recommended-course-title' href='https://treehouse.7eer.net/c/388403/294890/3944' onClick="_gaq.push(['_trackEvent', 'Treehouse Course Select', 'Node.js Basics', 'Transforms']);" rel='nofollow' target='_blank'>Node.js Basics</a>
+<div class='recommended-course-details'>Intermediate</div>
+</li>
+<li>
+<a class='recommended-course-title' href='https://treehouse.7eer.net/c/388403/294890/3944' onClick="_gaq.push(['_trackEvent', 'Treehouse Course Select', 'Angular Basics', 'Transforms']);" rel='nofollow' target='_blank'>Angular Basics</a>
+<div class='recommended-course-details'>Intermediate</div>
+</li>
+<li>
+<a class='recommended-course-title' href='https://treehouse.7eer.net/c/388403/294890/3944' onClick="_gaq.push(['_trackEvent', 'Treehouse Course Select', 'jQuery Basics', 'Transforms']);" rel='nofollow' target='_blank'>jQuery Basics</a>
+<div class='recommended-course-details'>Beginner</div>
+</li>
+<li>
+<a class='recommended-course-title' href='https://treehouse.7eer.net/c/388403/294890/3944' onClick="_gaq.push(['_trackEvent', 'Treehouse Course Select', 'AJAX Basics', 'Transforms']);" rel='nofollow' target='_blank'>AJAX Basics</a>
+<div class='recommended-course-details'>Intermediate</div>
+</li>
+<li>
+<a class='recommended-course-title' href='https://treehouse.7eer.net/c/388403/294890/3944' onClick="_gaq.push(['_trackEvent', 'Treehouse Course Select', 'D3.js', 'Transforms']);" rel='nofollow' target='_blank'>D3.js</a>
+<div class='recommended-course-details'>Intermediate</div>
+</li>
+<li>
+<a class='recommended-course-title' href='https://treehouse.7eer.net/c/388403/294890/3944' onClick="_gaq.push(['_trackEvent', 'Treehouse Course Select', 'Bootstrap Basics', 'Transforms']);" rel='nofollow' target='_blank'>Bootstrap Basics</a>
+<div class='recommended-course-details'>Beginner</div>
+</li>
+<li>
+<a class='recommended-course-title' href='https://treehouse.7eer.net/c/388403/294890/3944' onClick="_gaq.push(['_trackEvent', 'Treehouse Course Select', 'Sass Basics', 'Transforms']);" rel='nofollow' target='_blank'>Sass Basics</a>
+<div class='recommended-course-details'>Beginner</div>
+</li>
+<li>
+<a class='recommended-course-title' href='https://treehouse.7eer.net/c/388403/294890/3944' onClick="_gaq.push(['_trackEvent', 'Treehouse Course Select', 'Advanced Sass', 'Transforms']);" rel='nofollow' target='_blank'>Advanced Sass</a>
+<div class='recommended-course-details'>Advanced</div>
+</li>
+<li>
+<a class='recommended-course-title' href='https://treehouse.7eer.net/c/388403/294890/3944' onClick="_gaq.push(['_trackEvent', 'Treehouse Course Select', 'Building Applications with React &amp;amp; Redux', 'Transforms']);" rel='nofollow' target='_blank'>Building Applications with React &amp; Redux</a>
+<div class='recommended-course-details'>Advanced</div>
+</li>
+<li>
+<a class='recommended-course-title' href='https://treehouse.7eer.net/c/388403/294890/3944' onClick="_gaq.push(['_trackEvent', 'Treehouse Course Select', 'Introducing ES', 'Transforms']);" rel='nofollow' target='_blank'>Introducing ES</a>
+<div class='recommended-course-details'>Intermediate</div>
+</li>
+<li>
+<a class='recommended-course-title' href='https://treehouse.7eer.net/c/388403/294890/3944' onClick="_gaq.push(['_trackEvent', 'Treehouse Course Select', 'Gulp Basics', 'Transforms']);" rel='nofollow' target='_blank'>Gulp Basics</a>
+<div class='recommended-course-details'>Intermediate</div>
+</li>
+<li>
+<a class='recommended-course-title' href='https://treehouse.7eer.net/c/388403/294890/3944' onClick="_gaq.push(['_trackEvent', 'Treehouse Course Select', 'npm Basics', 'Transforms']);" rel='nofollow' target='_blank'>npm Basics</a>
+<div class='recommended-course-details'>Beginner</div>
+</li>
+<li>
+<a class='recommended-course-title' href='https://treehouse.7eer.net/c/388403/294890/3944' onClick="_gaq.push(['_trackEvent', 'Treehouse Course Select', 'SVG Basics', 'Transforms']);" rel='nofollow' target='_blank'>SVG Basics</a>
+<div class='recommended-course-details'>Intermediate</div>
+</li>
+<li>
+<a class='recommended-course-title' href='https://treehouse.7eer.net/c/388403/294890/3944' onClick="_gaq.push(['_trackEvent', 'Treehouse Course Select', 'WordPress Basics', 'Transforms']);" rel='nofollow' target='_blank'>WordPress Basics</a>
+<div class='recommended-course-details'>Beginner</div>
+</li>
+<li>
+<a class='recommended-course-title' href='https://treehouse.7eer.net/c/388403/294890/3944' onClick="_gaq.push(['_trackEvent', 'Treehouse Course Select', 'Drupal Basics', 'Transforms']);" rel='nofollow' target='_blank'>Drupal Basics</a>
+<div class='recommended-course-details'>Beginner</div>
+</li>
+<li>
+<a class='recommended-course-title' href='https://treehouse.7eer.net/c/388403/294890/3944' onClick="_gaq.push(['_trackEvent', 'Treehouse Course Select', 'Front-End Web Optimization Workflow', 'Transforms']);" rel='nofollow' target='_blank'>Front-End Web Optimization Workflow</a>
+<div class='recommended-course-details'>Intermediate</div>
+</li>
+</ul>
+</div>
+<div data-toggle-topic='Mobile Development' hidden>
+<p>Based on your interest in Mobile Development I recommend checking out the following <a href="https://treehouse.7eer.net/c/388403/263461/3944" rel="nofollow" target="_blank" onClick="_gaq.push(['_trackEvent', 'Treehouse Course Select', 'Treehouse Courses', 'Transforms']);">Treehouse courses</a>:</p>
+<ul class='lead-list-cols group'>
+<li>
+<a class='recommended-course-title' href='https://treehouse.7eer.net/c/388403/294890/3944' onClick="_gaq.push(['_trackEvent', 'Treehouse Course Select', 'iOS Design Patterns', 'Transforms']);" rel='nofollow' target='_blank'>iOS Design Patterns</a>
+<div class='recommended-course-details'>Intermediate</div>
+</li>
+<li>
+<a class='recommended-course-title' href='https://treehouse.7eer.net/c/388403/294890/3944' onClick="_gaq.push(['_trackEvent', 'Treehouse Course Select', 'Objective-C Basics', 'Transforms']);" rel='nofollow' target='_blank'>Objective-C Basics</a>
+<div class='recommended-course-details'>Beginner</div>
+</li>
+<li>
+<a class='recommended-course-title' href='https://treehouse.7eer.net/c/388403/294890/3944' onClick="_gaq.push(['_trackEvent', 'Treehouse Course Select', 'Swift Basics', 'Transforms']);" rel='nofollow' target='_blank'>Swift Basics</a>
+<div class='recommended-course-details'>Beginner</div>
+</li>
+<li>
+<a class='recommended-course-title' href='https://treehouse.7eer.net/c/388403/294890/3944' onClick="_gaq.push(['_trackEvent', 'Treehouse Course Select', 'Kotlin &amp;amp; Anko', 'Transforms']);" rel='nofollow' target='_blank'>Kotlin &amp; Anko</a>
+<div class='recommended-course-details'>Advanced</div>
+</li>
+<li>
+<a class='recommended-course-title' href='https://treehouse.7eer.net/c/388403/294890/3944' onClick="_gaq.push(['_trackEvent', 'Treehouse Course Select', 'Java Basics', 'Transforms']);" rel='nofollow' target='_blank'>Java Basics</a>
+<div class='recommended-course-details'>Beginner</div>
+</li>
+<li>
+<a class='recommended-course-title' href='https://treehouse.7eer.net/c/388403/294890/3944' onClick="_gaq.push(['_trackEvent', 'Treehouse Course Select', 'Object-Oriented Objective-C', 'Transforms']);" rel='nofollow' target='_blank'>Object-Oriented Objective-C</a>
+<div class='recommended-course-details'>Beginner</div>
+</li>
+<li>
+<a class='recommended-course-title' href='https://treehouse.7eer.net/c/388403/294890/3944' onClick="_gaq.push(['_trackEvent', 'Treehouse Course Select', 'Objective-C for Swift Developers', 'Transforms']);" rel='nofollow' target='_blank'>Objective-C for Swift Developers</a>
+<div class='recommended-course-details'>Intermediate</div>
+</li>
+<li>
+<a class='recommended-course-title' href='https://treehouse.7eer.net/c/388403/294890/3944' onClick="_gaq.push(['_trackEvent', 'Treehouse Course Select', 'Build a Simple iPhone App with Objective-C', 'Transforms']);" rel='nofollow' target='_blank'>Build a Simple iPhone App with Objective-C</a>
+<div class='recommended-course-details'>Beginner</div>
+</li>
+<li>
+<a class='recommended-course-title' href='https://treehouse.7eer.net/c/388403/294890/3944' onClick="_gaq.push(['_trackEvent', 'Treehouse Course Select', 'Build a Simple Android App', 'Transforms']);" rel='nofollow' target='_blank'>Build a Simple Android App</a>
+<div class='recommended-course-details'>Beginner</div>
+</li>
+</ul>
+</div>
+<div data-toggle-topic='Web Development' hidden>
+<p>Based on your interest in Web Development I recommend checking out the following <a href="https://treehouse.7eer.net/c/388403/263461/3944" rel="nofollow" target="_blank" onClick="_gaq.push(['_trackEvent', 'Treehouse Course Select', 'Treehouse Courses', 'Transforms']);">Treehouse courses</a>:</p>
+<ul class='lead-list-cols group'>
+<li>
+<a class='recommended-course-title' href='https://treehouse.7eer.net/c/388403/294890/3944' onClick="_gaq.push(['_trackEvent', 'Treehouse Course Select', 'Git Basics', 'Transforms']);" rel='nofollow' target='_blank'>Git Basics</a>
+<div class='recommended-course-details'>Beginner</div>
+</li>
+<li>
+<a class='recommended-course-title' href='https://treehouse.7eer.net/c/388403/294890/3944' onClick="_gaq.push(['_trackEvent', 'Treehouse Course Select', 'Console Foundations', 'Transforms']);" rel='nofollow' target='_blank'>Console Foundations</a>
+<div class='recommended-course-details'>Beginner</div>
+</li>
+<li>
+<a class='recommended-course-title' href='https://treehouse.7eer.net/c/388403/294890/3944' onClick="_gaq.push(['_trackEvent', 'Treehouse Course Select', 'HTTP Basics', 'Transforms']);" rel='nofollow' target='_blank'>HTTP Basics</a>
+<div class='recommended-course-details'>Beginner</div>
+</li>
+<li>
+<a class='recommended-course-title' href='https://treehouse.7eer.net/c/388403/294890/3944' onClick="_gaq.push(['_trackEvent', 'Treehouse Course Select', 'REST API Basics', 'Transforms']);" rel='nofollow' target='_blank'>REST API Basics</a>
+<div class='recommended-course-details'>Beginner</div>
+</li>
+<li>
+<a class='recommended-course-title' href='https://treehouse.7eer.net/c/388403/294890/3944' onClick="_gaq.push(['_trackEvent', 'Treehouse Course Select', 'Introduction to Functional Programming', 'Transforms']);" rel='nofollow' target='_blank'>Introduction to Functional Programming</a>
+<div class='recommended-course-details'>Intermediate</div>
+</li>
+<li>
+ <a class='recommended-course-title' href='https://treehouse.7eer.net/c/388403/294890/3944' onClick="_gaq.push(['_trackEvent', 'Treehouse Course Select', 'Ruby Basics', 'Transforms']);" rel='nofollow' target='_blank'>Ruby Basics</a>
+<div class='recommended-course-details'>Beginner</div>
+</li>
+<li>
+<a class='recommended-course-title' href='https://treehouse.7eer.net/c/388403/294890/3944' onClick="_gaq.push(['_trackEvent', 'Treehouse Course Select', 'Ruby Gems', 'Transforms']);" rel='nofollow' target='_blank'>Ruby Gems</a>
+<div class='recommended-course-details'>Beginner</div>
+</li>
+<li>
+<a class='recommended-course-title' href='https://treehouse.7eer.net/c/388403/294890/3944' onClick="_gaq.push(['_trackEvent', 'Treehouse Course Select', 'Ruby on Rails 5 Basics', 'Transforms']);" rel='nofollow' target='_blank'>Ruby on Rails 5 Basics</a>
+<div class='recommended-course-details'>Beginner</div>
+</li>
+<li>
+<a class='recommended-course-title' href='https://treehouse.7eer.net/c/388403/294890/3944' onClick="_gaq.push(['_trackEvent', 'Treehouse Course Select', 'Build a Rails API', 'Transforms']);" rel='nofollow' target='_blank'>Build a Rails API</a>
+<div class='recommended-course-details'>Intermediate</div>
+</li>
+<li>
+<a class='recommended-course-title' href='https://treehouse.7eer.net/c/388403/294890/3944' onClick="_gaq.push(['_trackEvent', 'Treehouse Course Select', 'Python Basics', 'Transforms']);" rel='nofollow' target='_blank'>Python Basics</a>
+<div class='recommended-course-details'>Beginner</div>
+</li>
+<li>
+<a class='recommended-course-title' href='https://treehouse.7eer.net/c/388403/294890/3944' onClick="_gaq.push(['_trackEvent', 'Treehouse Course Select', 'Django Basics', 'Transforms']);" rel='nofollow' target='_blank'>Django Basics</a>
+<div class='recommended-course-details'>Intermediate</div>
+</li>
+<li>
+<a class='recommended-course-title' href='https://treehouse.7eer.net/c/388403/294890/3944' onClick="_gaq.push(['_trackEvent', 'Treehouse Course Select', 'C# Basics', 'Transforms']);" rel='nofollow' target='_blank'>C# Basics</a>
+<div class='recommended-course-details'>Beginner</div>
+</li>
+<li>
+<a class='recommended-course-title' href='https://treehouse.7eer.net/c/388403/294890/3944' onClick="_gaq.push(['_trackEvent', 'Treehouse Course Select', 'Go Language Overview', 'Transforms']);" rel='nofollow' target='_blank'>Go Language Overview</a>
+<div class='recommended-course-details'>Intermediate</div>
+</li>
+<li>
+<a class='recommended-course-title' href='https://treehouse.7eer.net/c/388403/294890/3944' onClick="_gaq.push(['_trackEvent', 'Treehouse Course Select', 'PHP Basics', 'Transforms']);" rel='nofollow' target='_blank'>PHP Basics</a>
+<div class='recommended-course-details'>Beginner</div>
+</li>
+<li>
+<a class='recommended-course-title' href='https://treehouse.7eer.net/c/388403/294890/3944' onClick="_gaq.push(['_trackEvent', 'Treehouse Course Select', 'PHP Standards &amp;amp; Best Practices', 'Transforms']);" rel='nofollow' target='_blank'>PHP Standards &amp; Best Practices</a>
+<div class='recommended-course-details'>Intermediate</div>
+</li>
+<li>
+<a class='recommended-course-title' href='https://treehouse.7eer.net/c/388403/294890/3944' onClick="_gaq.push(['_trackEvent', 'Treehouse Course Select', 'Introduction to Scala', 'Transforms']);" rel='nofollow' target='_blank'>Introduction to Scala</a>
+<div class='recommended-course-details'>Intermediate</div>
+</li>
+<li>
+<a class='recommended-course-title' href='https://treehouse.7eer.net/c/388403/294890/3944' onClick="_gaq.push(['_trackEvent', 'Treehouse Course Select', 'ASP.NET MVC Basics', 'Transforms']);" rel='nofollow' target='_blank'>ASP.NET MVC Basics</a>
+<div class='recommended-course-details'>Beginner</div>
+</li>
+<li>
+<a class='recommended-course-title' href='https://treehouse.7eer.net/c/388403/294890/3944' onClick="_gaq.push(['_trackEvent', 'Treehouse Course Select', 'How to Make a Video Game', 'Transforms']);" rel='nofollow' target='_blank'>How to Make a Video Game</a>
+<div class='recommended-course-details'>Beginner</div>
+</li>
+</ul>
+</div>
+</div>
+</div>
+</div>
+</section>
+<section class='container'>
+<div class='promo-book'>
+<h2>
+<a href='#'>Learn to Code HTML <abbr title="and">&amp;</abbr> CSS the Book</a>
+</h2>
+<a class='promo-img promo-book-img' data-js='promo-book-img' href='../index.html'><img alt="HTML and CSS" src="../../assets/images/book/book-sm.png" /></a>
+<p><cite>Learn to Code HTML <abbr title="and">&amp;</abbr> CSS</cite> is an interactive beginner&#8217;s guide with one express goal: <strong>teach you how to develop and style websites</strong> with HTML and CSS. Outlining the fundamentals, this book covers all of the common elements of front-end design and development.</p>
+<div class='promo-btn'>
+<a class='btn btn-cta' href='https://click.linksynergy.com/link?id=0UVRLqz5qts&offerid=145238.2038547&type=2&murl=http://www.informit.com/title/9780321940520' onClick="_gaq.push(['_trackEvent', 'Purchase', 'Peachpit', 'Transforms']);" rel='nofollow'>Buy Learn to Code HTML <abbr title="and">&amp;</abbr> CSS</a>
+</div>
+<p class='promo-links'>
+Also available at
+<span>
+<a href='http://www.amazon.com/Learn-Code-HTML-CSS-Websites/dp/0321940520' onClick="_gaq.push(['_trackEvent', 'Purchase', 'Amazon', 'Transforms']);" rel='nofollow'>Amazon</a>
+and
+<a href='http://www.barnesandnoble.com/w/learn-to-code-html-and-css-shay-howe/1124334828' onClick="_gaq.push(['_trackEvent', 'Purchase', 'Barnes &amp; Noble', 'Transforms']);" rel='nofollow'>Barnes &amp; Noble</a>
+</span>
+</p>
+</div>
+</section>
+<section class='container'>
+<div class='note'>
+<div class='promo note-box note-stack'>
+<h3>
+<a href='../../html-css/index.html'>Looking for Beginner HTML <abbr title="and">&amp;</abbr> CSS Lessons?</a>
+</h3>
+<a class='promo-img promo-course-img' href='../../html-css/index.html'><img alt="HTML and CSS" class="media-circle" src="../../assets/images/code.jpg" /></a>
+<p>Checkout these <a href="../../html-css/index.html">beginner focused HTML and CSS lessons</a>, compiled into a simple and comprehensive guide dedicated to helping beginners learn HTML and CSS, working through all common components.</p>
+<a class='btn btn-alt' href='../../html-css/index.html'>View Beginner HTML <abbr title="and">&amp;</abbr> CSS Lessons</a>
+</div>
+<div class='newsletter note-box group'>
+<h3>Join the Newsletter</h3>
+<p>To stay up to date and learn when new courses and lessons are posted, please sign up for the newsletter&#8212;spam free.</p>
+<form action='//codesquadllc.us4.list-manage.com/subscribe/post?u=98ada7f8bdec8f5ac0c78fd0f&amp;amp;id=4750db3524' class='newsletter-form' method='post' name='mc-embedded-subscribe-form' target='_blank'>
+<div class='input-group'>
+<input class='input-control' name='EMAIL' placeholder='Email address' required type='email'>
+<div class='input-group-btn'>
+<button class='btn btn-alt' name='subscribe'>Get Updates</button>
+</div>
+</div>
+</form>
+</div>
+</div>
+</section>
+<script async src='https://codepen.io/assets/embed/ei.js'></script>
+</div>
+<footer class='primary-footer'>
+<div class='clamp'>
+<small>&copy; CodeSquad LLC</small>
+<div class='enjoy-cta'>
+Enjoy these lessons?
+<a class='twitter-follow-button' data-lang='en' data-show-count='false' data-size='large' href='https://twitter.com/codesquadllc'>
+Follow @codesquadllc
+</a>
+</div>
+</div>
+</footer>
+</section>
+</div>
+</div>
+<script src='https://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js'></script>
+<script>
+      window.jQuery || document.write('<script src="/assets/javascripts/vendor/jquery-1.11.0.min.js"><\/script>')
+    </script>
+<script src="../../assets/javascripts/main.js" type="text/javascript"></script>
+
+</body>
+</html>
+
+<!-- Localized -->

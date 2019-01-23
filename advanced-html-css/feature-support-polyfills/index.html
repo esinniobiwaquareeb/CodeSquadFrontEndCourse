@@ -1,0 +1,787 @@
+<!DOCTYPE html>
+<html lang='en'>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" >
+<meta charset='utf-8'>
+<meta content='IE=edge,chrome=1' http-equiv='X-UA-Compatible'>
+<meta content='width=device-width, initial-scale=1' name='viewport'>
+<meta content='Take a look at the best ways to get websites to look and perform the same in all browsers by using tools such as feature support and different polyfills.' name='description'>
+<meta content='browser testing IE support modernizr conditional styles javascript' name='keywords'>
+<title>Feature Support &amp; Polyfills - Learn to Code Advanced HTML &amp; CSS</title>
+<script src='../../assets/javascripts/vendor/modernizr-2.8.1.js'></script>
+<link href='https://cloud.typography.com/6623692/607644/css/fonts.css' rel='stylesheet'>
+<link href='https://fonts.googleapis.com/css?family=Source+Code+Pro' rel='stylesheet'>
+<link href='../../assets/stylesheets/main.css' rel='stylesheet'>
+</head>
+<body class='advanced-html-css advanced-html-css_feature-support-polyfills advanced-html-css_feature-support-polyfills_index'>
+<div class='wrap-macro'>
+<div class='wrap-micro group'>
+<aside class='aside'>
+<header class='primary-header' role='banner'>
+<h1 class='primary-logo'>
+<a href='../index.html'>
+<span>Learn to Code Advanced</span>
+<abbr title='Hyper Text Markup Language'>HTML</abbr>
+<abbr title='and'>&amp;</abbr>
+<abbr title='Cascading Style Sheets'>CSS</abbr>
+</a>
+</h1>
+<a class='primary-nav-btn' data-js='primary-nav-btn' href='#' rel='nofollow'>Navigation</a>
+</header>
+<div class='aside-macro'>
+<div class='aside-micro'>
+<nav class='primary-nav' role='navigation'>
+<ul>
+<li class='performance-organization'>
+<a href='../performance-organization/index.html'>
+<strong>Lesson 1</strong>
+Performance &amp; Organization
+</a>
+</li>
+<li class='detailed-css-positioning'>
+<a href='../detailed-css-positioning/index.html'>
+<strong>Lesson 2</strong>
+Detailed Positioning
+</a>
+</li>
+<li class='complex-selectors'>
+<a href='../complex-selectors/index.html'>
+<strong>Lesson 3</strong>
+Complex Selectors
+</a>
+</li>
+<li class='responsive-web-design'>
+<a href='../responsive-web-design/index.html'>
+<strong>Lesson 4</strong>
+Responsive Web Design
+</a>
+</li>
+<li class='preprocessors'>
+<a href='../preprocessors/index.html'>
+<strong>Lesson 5</strong>
+Preprocessors
+</a>
+</li>
+<li class='jquery'>
+<a href='../jquery/index.html'>
+<strong>Lesson 6</strong>
+jQuery
+</a>
+</li>
+<li class='css-transforms'>
+<a href='../css-transforms/index.html'>
+<strong>Lesson 7</strong>
+Transforms
+</a>
+</li>
+<li class='transitions-animations'>
+<a href='../transitions-animations/index.html'>
+<strong>Lesson 8</strong>
+Transitions &amp; Animations
+</a>
+</li>
+<li class='feature-support-polyfills'>
+<a href='index.html'>
+<strong>Lesson 9</strong>
+ Feature Support &amp; Polyfills
+</a>
+</li>
+<li class='semantics-accessibility'>
+<a href='../semantics-accessibility/index.html'>
+<strong>Lesson 10</strong>
+Extending Semantics &amp; Accessibility
+</a>
+</li>
+</ul>
+</nav>
+<div class='aside-group'>
+<p>Learn to Code Advanced HTML <abbr title="and">&amp;</abbr> CSS is written by designer <abbr title="and">&amp;</abbr> front-end developer <a href="http://codesquadllc.com">CodeSquad LLC</a>.</p>
+<p>Checkout <a href="../../html-css/index.html">Learn to Code HTML <abbr title="and">&amp;</abbr> CSS</a> for a beginner&#8217;s guide front-end design <abbr title="and">&amp;</abbr> development.</p>
+</div>
+<p>Want to learn to more HTML <abbr title="and">&amp;</abbr> CSS, or study other topics? Find the right course for you.</p>
+<div class='margin-bottom'>
+<a class='btn btn-alt' href='../../recommendations/index.html'>Get Course Recommendations</a>
+</div>
+</div>
+</div>
+</aside>
+<section class='main' data-js='primary-nav-close'>
+<div class='group'>
+<article class='lesson container group' data-js='lesson'>
+<div class='lesson-title'>
+<h6>Lesson 9</h6>
+<h1>Feature Support <abbr title="and">&amp;</abbr> Polyfills</h1>
+</div>
+<script src='https://m.servedby-buysellads.com/monetization.js' type='text/javascript'></script>
+<div class='bsa-cpc'></div>
+<script>
+                (function(){
+                  if(typeof _bsa !== 'undefined' && _bsa) {
+                    _bsa.init('default', 'CKYDK5QJ', 'placement:learncodesquadllccom', {
+                      target: '.bsa-cpc',
+                      align: 'horizontal',
+                      disable_css: 'true'
+                    });
+                  }
+                })();
+              </script>
+<div class='clamp clamp-release'>
+<div class='pop-out'>
+<nav class='toc'>
+<h4>
+In this Lesson
+<span class='toc-number'>9</span>
+</h4>
+<h6>HTML</h6>
+<ul>
+<li>
+<a href='#html5-shiv'>HTML5 Shiv</a>
+</li>
+<li>
+<a href='#cross-browser-testing'>Cross Browser Testing</a>
+</li>
+</ul>
+<h6>CSS</h6>
+<ul>
+<li>
+<a href='#detecting-browser-features'>Detecting Browser Features</a>
+</li>
+</ul>
+<h6>JavaScript</h6>
+<ul>
+<li>
+<a href='#conditionally-loading-files'>Conditionally Loading Files</a>
+</li>
+</ul>
+<h6>Share</h6>
+<ul class='share' data-js='share' data-permalink='<footer class='primary-footer'>
+<div class='clamp'>
+<small>&copy; CodeSquad LLC</small>
+<div class='enjoy-cta'>
+Enjoy these lessons?
+<a class='twitter-follow-button' data-lang='en' data-show-count='false' data-size='large' href='https://twitter.com/codesquadllc'>
+Follow @codesquadllc
+</a>
+</div>
+</div>
+<li>
+<a class='share-twitter' data-js='share-twitter' href='#' rel='nofollow'>
+Share on Twitter
+</a>
+</li>
+<li>
+<a class='share-facebook' data-js='share-facebook' href='#' rel='nofollow'>
+Share on Facebook
+</a>
+</li>
+<li>
+<a class='share-google' data-js='share-google' href='#' rel='nofollow'>
+Share on Google+
+</a>
+ </li>
+</ul>
+</nav>
+<div class='ad-spot group'>
+<script async id='_carbonads_js' src='https://cdn.carbonads.com/carbon.js?serve=CKYILKJL&placement=learncodesquadllccom' type='text/javascript'></script>
+</div>
+</div>
+</div>
+<p>Building a website can be both extremely rewarding and frustrating. Common frustrations arise from trying to get a website to look and perform the same in every browser. All front end developers have shared this frustration at one point or another.</p>
+<p>Truth be told, websites <strong>do not</strong> need to look or perform the same in every browser. Exactly how close a website works in each browser is up to you and your level of comfort for a given website. If a website receives under half a percent of traffic from Internet Explorer 6 it might make sense to drop support for it. If that half a percent is still contributing to thousands of dollars in sales, support may be mandatory. Determine what is acceptable for a given website and work from there.</p>
+<p>There are a handful of common practices to get websites to perform adequately in all browsers, some of which have already been covered within this guide. When incorporating CSS3 properties, fallbacks are recommend to support older browsers. Other techniques include shivs and polyfills. Generally speaking, shivs and polyfills are small JavaScript plugins that add support for a requested set of features not natively supported by a specific browser.</p>
+<h2 id='html5-shiv'>HTML5 Shiv</h2>
+<p>Perhaps the most popular shiv, and one you may have likely used already, is the HTML5 Shiv. The HTML5 Shiv was <a href="http://paulirish.com/2011/the-history-of-the-html5-shiv/" rel="nofollow">created by Remy Sharp</a> to provide the ability to use HTML5 elements within versions of Internet Explorer 8 and below. The HTML5 Shiv not only creates support for HTML5 elements but also allows them to be properly styled with CSS.</p>
+<p>The <a href="http://code.google.com/p/html5shiv/" rel="nofollow">shiv</a> should be downloaded from Google, where Remy maintains the latest version, then hosted on your server. For the best performance, reference the shiv JavaScript file within the <code>head</code> of the document, after any stylesheet references. Additionally, you want to reference the shiv inside of a <a href="http://css-tricks.com/how-to-create-an-ie-only-stylesheet/" rel="nofollow">conditional comment</a>, making sure that the file is only loaded within versions of Internet Explorer 8 and below.</p>
+<p>In this case the conditional comment looks like <code>&#60;!--[if lt IE 9]&#62;...&#60;![endif]--&#62;</code>.</p>
+<pre class="highlight html"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1&#x000A;2&#x000A;3&#x000A;4</pre></td><td class="rouge-code"><pre><span class="c">&lt;!--[if lt IE 9]&gt;&#x000A;  &lt;script src="html5shiv.js"&gt;&lt;/script&gt;&#x000A;&lt;![endif]--&gt;</span>&#x000A;</pre></td></tr></tbody></table>
+              </code></pre>
+<div class='note note-box'>
+<h4>The Difference Between a Shiv <abbr title="and">&amp;</abbr> a Shim</h4>
+<p>Chances are you may have heard of both the HTML5 <em>Shiv</em> and HTML5 <em>Shim</em>, and wondered what the difference, if any, may be. Oddly enough, there is <strong>no</strong> difference between the HTML5 Shiv and HTML5 Shim. The two words are often used interchangeably and are commonly transposed.</p>
+</div>
+<p>Additionally, once the new HTML5 elements are created using the shiv, any block level elements need to be identified and updated using the <code>display: block;</code> declaration.</p>
+<pre class="highlight css"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1&#x000A;2&#x000A;3&#x000A;4&#x000A;5&#x000A;6&#x000A;7&#x000A;8&#x000A;9&#x000A;10&#x000A;11&#x000A;12&#x000A;13&#x000A;14</pre></td><td class="rouge-code"><pre><span class="nt">article</span><span class="o">,</span>&#x000A;<span class="nt">aside</span><span class="o">,</span>&#x000A;<span class="nt">details</span><span class="o">,</span>&#x000A;<span class="nt">figcaption</span><span class="o">,</span>&#x000A;<span class="nt">figure</span><span class="o">,</span>&#x000A;<span class="nt">footer</span><span class="o">,</span>&#x000A;<span class="nt">header</span><span class="o">,</span>&#x000A;<span class="nt">hgroup</span><span class="o">,</span>&#x000A;<span class="nt">nav</span><span class="o">,</span>&#x000A;<span class="nt">section</span><span class="o">,</span>&#x000A;<span class="nt">summary</span> <span class="p">{</span>&#x000A;  <span class="nl">display</span><span class="p">:</span> <span class="nb">block</span><span class="p">;</span>&#x000A;<span class="p">}</span>&#x000A;</pre></td></tr></tbody></table>
+              </code></pre>
+<p>Lastly, Internet Explorer 8 and 9 do not correctly define styles for a few HTML5 <code>inline-block</code> level elements. As before, these styles will need to be explicitly stated. After which, all versions of Internet Explorer should be good to go using any new HTML5 elements.</p>
+<pre class="highlight css"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1&#x000A;2&#x000A;3&#x000A;4&#x000A;5&#x000A;6</pre></td><td class="rouge-code"><pre><span class="nt">audio</span><span class="o">,</span>&#x000A;<span class="nt">canvas</span><span class="o">,</span>&#x000A;<span class="nt">video</span> <span class="p">{</span>&#x000A;  <span class="nl">display</span><span class="p">:</span> <span class="n">inline-block</span><span class="p">;</span>&#x000A;<span class="p">}</span>&#x000A;</pre></td></tr></tbody></table>
+              </code></pre>
+<h2 id='detecting-browser-features'>Detecting Browser Features</h2>
+<p>Referencing the HTML5 Shiv works well with a conditional comment because the intention is to specifically target browsers that don&#8217;t support new HTML5 features and elements. Additionally, there is a way to to provide support for specific HTML5 and CSS3 features, regardless of which browser is being used.</p>
+<p>Feature detection, as provided by <a href="http://modernizr.com/" rel="nofollow">Modernizr</a>, provides a way to write conditional CSS and JavaScript based on whether or not a browser supports a specific feature. For example, if a browser supports rounded corners Modernizr will add the class of <code>borderradius</code> to the <code>html</code> element. If the browser doesn&#8217;t support rounded corners, Modernizr will add the class of <code>no-borderradius</code> to the <code>html</code> element.</p>
+<h3>Loading Modernizr</h3>
+<p>To get feature detection with Modernizr up and running, visit their <a href="http://modernizr.com/download/" rel="nofollow">download</a> page and customize what features you are looking to detect. Once downloaded, upload the JavaScript file on your server and reference it within the <code>head</code> of your HTML document, below any referenced style sheets.</p>
+<p>It is worth noting that Modernizr may be configured to include the HTML5 Shiv, in which case the shiv doesn&#8217;t need to be referenced on top of Modernizr.</p>
+<pre class="highlight html"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1&#x000A;2</pre></td><td class="rouge-code"><pre><span class="nt">&lt;script </span><span class="na">src=</span><span class="s">"modernizr.js"</span><span class="nt">&gt;&lt;/script&gt;</span>&#x000A;</pre></td></tr></tbody></table>
+              </code></pre>
+<h3>Conditionally Applying CSS Styles</h3>
+<p>Once Modernizr is up and running CSS styles may be conditionally applied based on the features a given browser supports. Modernizr has detection for the majority of the CSS3 properties and values, all of which can be found in the Modernizr <a href="http://modernizr.com/docs/#features-css" rel="nofollow">documentation</a>.</p>
+<p>One item to weigh out is if feature detection is necessary for certain styles. For example, using an RGBa color value may easily be supported with a fallback hexadecimal value without the use of feature detection. When deciding to use feature detection, it is important to keep styles organized and performance in mind. Avoid duplicating any code or making additional HTTP requests when possible.</p>
+<pre class="highlight css"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1&#x000A;2&#x000A;3&#x000A;4&#x000A;5&#x000A;6&#x000A;7&#x000A;8&#x000A;9&#x000A;10&#x000A;11&#x000A;12&#x000A;13&#x000A;14&#x000A;15&#x000A;16&#x000A;17&#x000A;18&#x000A;19&#x000A;20&#x000A;21&#x000A;22&#x000A;23&#x000A;24&#x000A;25&#x000A;26&#x000A;27&#x000A;28&#x000A;29&#x000A;30&#x000A;31&#x000A;32&#x000A;33&#x000A;34&#x000A;35&#x000A;36&#x000A;37&#x000A;38</pre></td><td class="rouge-code"><pre><span class="nt">button</span> <span class="p">{</span>&#x000A;  <span class="nl">border</span><span class="p">:</span> <span class="m">0</span><span class="p">;</span>&#x000A;  <span class="nl">color</span><span class="p">:</span> <span class="m">#fff</span><span class="p">;</span>&#x000A;  <span class="nl">cursor</span><span class="p">:</span> <span class="nb">pointer</span><span class="p">;</span>&#x000A;  <span class="nl">font-size</span><span class="p">:</span> <span class="m">14px</span><span class="p">;</span>&#x000A;  <span class="nl">font-weight</span><span class="p">:</span> <span class="m">600</span><span class="p">;</span>&#x000A;  <span class="nl">margin</span><span class="p">:</span> <span class="m">0</span><span class="p">;</span>&#x000A;  <span class="nl">outline</span><span class="p">:</span> <span class="m">0</span><span class="p">;</span>&#x000A;<span class="p">}</span>&#x000A;&#x000A;<span class="c">/* With CSS Gradient Styles */</span>&#x000A;&#x000A;<span class="nc">.cssgradients</span> <span class="nt">button</span> <span class="p">{</span>&#x000A;  <span class="nl">border</span><span class="p">:</span> <span class="m">1px</span> <span class="nb">solid</span> <span class="m">#0080c2</span><span class="p">;</span>&#x000A;  <span class="nl">background</span><span class="p">:</span> <span class="n">linear-gradient</span><span class="p">(</span><span class="m">#00a2f5</span><span class="p">,</span> <span class="m">#0087cc</span><span class="p">);</span>&#x000A;  <span class="nl">border-radius</span><span class="p">:</span> <span class="m">6px</span><span class="p">;</span>&#x000A;  <span class="nl">padding</span><span class="p">:</span> <span class="m">15px</span> <span class="m">30px</span><span class="p">;</span>&#x000A;<span class="p">}</span>&#x000A;<span class="nc">.cssgradients</span> <span class="nt">button</span><span class="nd">:hover</span> <span class="p">{</span>&#x000A;  <span class="nl">background</span><span class="p">:</span> <span class="n">linear-gradient</span><span class="p">(</span><span class="m">#1ab1ff</span><span class="p">,</span> <span class="m">#009beb</span><span class="p">);</span>&#x000A;<span class="p">}</span>&#x000A;<span class="nc">.cssgradients</span> <span class="nt">button</span><span class="nd">:active</span> <span class="p">{</span>&#x000A;  <span class="nl">box-shadow</span><span class="p">:</span> <span class="nb">inset</span> <span class="m">0</span> <span class="m">1px</span> <span class="m">10px</span> <span class="n">rgba</span><span class="p">(</span><span class="m">255</span><span class="p">,</span> <span class="m">255</span><span class="p">,</span> <span class="m">255</span><span class="p">,</span> <span class="m">.5</span><span class="p">);</span>&#x000A;<span class="p">}</span>&#x000A;&#x000A;<span class="c">/* Without CSS Gradient Styles */</span>&#x000A;&#x000A;<span class="nc">.no-cssgradients</span> <span class="nt">button</span> <span class="p">{</span>&#x000A;  <span class="nl">background</span><span class="p">:</span> <span class="nb">transparent</span> <span class="sx">url("button.png")</span> <span class="m">0</span> <span class="m">0</span> <span class="nb">no-repeat</span><span class="p">;</span>&#x000A;  <span class="nl">padding</span><span class="p">:</span> <span class="m">16px</span> <span class="m">31px</span><span class="p">;</span>&#x000A;<span class="p">}</span>&#x000A;<span class="nc">.no-cssgradients</span> <span class="nt">button</span><span class="nd">:hover</span> <span class="p">{</span>&#x000A;  <span class="nl">background-position</span><span class="p">:</span> <span class="m">0</span> <span class="m">-49px</span><span class="p">;</span>&#x000A;<span class="p">}</span>&#x000A;<span class="nc">.no-cssgradients</span> <span class="nt">button</span><span class="nd">:active</span> <span class="p">{</span>&#x000A;  <span class="nl">background-position</span><span class="p">:</span> <span class="m">0</span> <span class="m">-98px</span><span class="p">;</span>&#x000A;<span class="p">}</span>&#x000A;</pre></td></tr></tbody></table>
+              </code></pre>
+<div class='note'>
+<h4 class='demo-title'>Feature Detection Demo</h4>
+<p class='codepen' data-default-tab='result' data-height='132' data-slug-hash='gKfiy' data-theme-id='5990'>
+See the Pen <a href='http://codepen.io/codesquadllc/pen/gKfiy/'>Feature Detection</a> by CodeSquad LLC (<a href='http://codepen.io/codesquadllc'>@codesquadllc</a>) on <a href='http://codepen.io'>CodePen</a>.
+</p>
+</div>
+<p>In the demonstration above, the button inherits some default styles. However, specific styles are only applied based on whether or not CSS3 gradient background are supported. In this case, rounded corners and box shadows are also included within the conditional styles. Those browsers that support gradients get a gradient background, rounded corners, and a box shadow. Those browsers that do not receive an image with all of these styles included within the image. With this code none of the styles are being over written and an HTTP request is only made when necessary.</p>
+<p>When working with CSS3 feature detection it is hard to know what the styles look like in browsers that do not support specific CSS3 features. Fortunately, there is a bookmarklet called <a href="http://davatron5000.github.com/deCSS3/" rel="nofollow">deCSS3</a> which disables any CSS3 features. Doing so allows you to see what a website would look like without CSS3, and if your conditional styles are working. To get a quick idea of what an individual browser supports, visit <a href="http://haz.io/" rel="nofollow">haz.io</a> within that specific browser.</p>
+<h2 id='conditionally-loading-files'>Conditionally Loading Files</h2>
+<p>On top of conditionally loading styles, Modernizr also provides a way to use <a href="https://modernizr.com/docs#using-modernizr-with-javascript" rel="nofollow">feature detection in JavaScript</a>. With this, JavaScript polyfills and conditional files may be loaded based on the detection of a given feature with the help of jQuery and the jQuery <code>getScript</code> method.</p>
+<p>Using Modernizr to set the condition of an <code>if</code> statement in Javascript allows different scripts to be executed based on whether or not the given condition is true or false. Below Modernizr is checking for local storage support. If local storage is supported <a href="https://davidwalsh.name/loading-scripts-jquery" rel="nofollow">jQuery is used to load</a> the <code>storage.js</code> file using the <code>getScript</code> method, and if local storage is not supported jQuery is used the <code>storage-polyfill.js</code> file using the <code>getScript</code> method.</p>
+<pre class="highlight javascript"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1&#x000A;2&#x000A;3&#x000A;4&#x000A;5&#x000A;6&#x000A;7&#x000A;8&#x000A;9&#x000A;10</pre></td><td class="rouge-code"><pre><span class="nx">$</span><span class="p">(</span><span class="nb">document</span><span class="p">).</span><span class="nx">ready</span><span class="p">(</span><span class="kd">function</span><span class="p">()</span> <span class="p">{</span>&#x000A;  <span class="k">if</span> <span class="p">(</span><span class="nx">Modernizr</span><span class="p">.</span><span class="nx">localstorage</span><span class="p">)</span> <span class="p">{</span>&#x000A;    <span class="c1">// Local storage is available</span>&#x000A;    <span class="nx">jQuery</span><span class="p">.</span><span class="nx">getScript</span><span class="p">(</span><span class="s1">'storage.js'</span><span class="p">);</span>&#x000A;  <span class="p">}</span> <span class="k">else</span> <span class="p">{</span>&#x000A;    <span class="c1">// Local storage is not available</span>&#x000A;    <span class="nx">jQuery</span><span class="p">.</span><span class="nx">getScript</span><span class="p">(</span><span class="s1">'storage-polyfill.js'</span><span class="p">);</span>&#x000A;  <span class="p">}</span>&#x000A;<span class="p">});</span>&#x000A;</pre></td></tr></tbody></table>
+              </code></pre>
+<h3>Conditionally Loading Based on Media Queries</h3>
+<p>One interesting condition Modernizr can test against is media queries. Doing so provides the ability to only load files based on different media query conditions. Not loading unnecessary files can be extremely beneficial for performance.</p>
+<pre class="highlight javascript"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1&#x000A;2&#x000A;3&#x000A;4&#x000A;5&#x000A;6</pre></td><td class="rouge-code"><pre><span class="nx">$</span><span class="p">(</span><span class="nb">document</span><span class="p">).</span><span class="nx">ready</span><span class="p">(</span><span class="kd">function</span><span class="p">()</span> <span class="p">{</span>&#x000A;  <span class="k">if</span> <span class="p">(</span><span class="nx">Modernizr</span><span class="p">.</span><span class="nx">mq</span><span class="p">(</span><span class="s1">'screen and (min-width: 640px)'</span><span class="p">))</span> <span class="p">{</span>&#x000A;    <span class="nx">jQuery</span><span class="p">.</span><span class="nx">getScript</span><span class="p">(</span><span class="s1">'tabs.js'</span><span class="p">);</span>&#x000A;  <span class="p">}</span>&#x000A;<span class="p">});</span>&#x000A;</pre></td></tr></tbody></table>
+              </code></pre>
+<p>Above, Modernizr looks to detect screens above 640 pixels wide, primarily desktops, and then loads the <code>tabs.js</code> file based off of this condition. It is important to note that this condition is tested only once, when the page loads, and that is it. Should a user resize the page, this condition will not be retested. Should this condition need to be retested, additional JavaScript would need to be included.</p>
+<h3>Conditionally Running Scripts</h3>
+<p>Using Modernizr, all of the HTML5 and CSS3 features they detect may be tested within JavaScript. For example, it may be worth disabling tooltips on mobile devices due to not having hover capabilities, and instead showing the tooltip in plain text on the screen. The script for calling these tooltips could be wrapped in a Modernizr condition, preventing the script from loading on smaller screens.</p>
+<pre class="highlight javascript"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1&#x000A;2&#x000A;3&#x000A;4&#x000A;5&#x000A;6</pre></td><td class="rouge-code"><pre><span class="nx">$</span><span class="p">(</span><span class="nb">document</span><span class="p">).</span><span class="nx">ready</span><span class="p">(</span><span class="kd">function</span><span class="p">()</span> <span class="p">{</span>&#x000A;  <span class="k">if</span> <span class="p">(</span><span class="nx">Modernizr</span><span class="p">.</span><span class="nx">mq</span><span class="p">(</span><span class="s1">'screen and (max-width: 400px)'</span><span class="p">))</span> <span class="p">{</span>&#x000A;    <span class="nx">$</span><span class="p">(</span><span class="s1">'.size'</span><span class="p">).</span><span class="nx">text</span><span class="p">(</span><span class="s1">'small'</span><span class="p">);</span>&#x000A;  <span class="p">}</span>&#x000A;<span class="p">});</span>&#x000A;</pre></td></tr></tbody></table>
+              </code></pre>
+<div class='note'>
+<h4 class='demo-title'>Conditionally Running Scripts Demo</h4>
+<p class='codepen' data-default-tab='result' data-height='102' data-slug-hash='Gogqa' data-theme-id='5990'>
+See the Pen <a href='http://codepen.io/codesquadllc/pen/Gogqa/'>Conditionally Running Scripts</a> by CodeSquad LLC (<a href='http://codepen.io/codesquadllc'>@codesquadllc</a>) on <a href='http://codepen.io'>CodePen</a>.
+</p>
+</div>
+<p>Above is a basic example of how JavaScript can be executed based on a condition established by Modernizr. Upon loading the page, if the screen is above 800 pixels wide nothing happens. However, if the screen is below 800 pixels wide, upon being loaded, the word &#8216;small&#8217; will be swapped for &#8216;large&#8217; based off of the executed JavaScript.</p>
+<h3>HTML5 <abbr title="and">&amp;</abbr> CSS3 Polyfills</h3>
+<p>Currently there are polyfills for nearly all of the different HTML5 and CSS3 features. The team over at Modernizr has put together quite an exhaustive <a href="https://github.com/Modernizr/Modernizr/wiki/HTML5-Cross-browser-Polyfills" rel="nofollow">list of polyfills</a>. These polyfills can be dropped in as needed.</p>
+<p>The same people behind Modernizr have also put together a <a href="http://html5please.com/" rel="nofollow">list</a> of all of the new HTML5 and CSS3 features, including instructions on how to use them responsibly. Understand, not all of these features need polyfills. Quite a few of them can be used outright or with the use of a fallback.</p>
+<h2 id='cross-browser-testing'>Cross Browser Testing</h2>
+<p>Perhaps the most dreaded part of web design and development is cross browser testing, making sure a website works well in all browsers. Generally speaking the more modern browsers, Chrome, Firefox, and Safari, all perform pretty well. The largest pitfalls live within Internet Explorer, and testing different versions of Internet Explorer can be difficult.</p>
+<p>There are a <a href="http://www.smashingmagazine.com/2011/08/07/a-dozen-cross-browser-testing-tools/" rel="nofollow">handful</a> of services out there that do help with cross browser testing, some are interactive while others are not. Being able to interact with a browser, rather than seeing a rendered screenshot, is far more helpful for debugging code. One of the best ways to boot up multiple versions of Internet Explorer is by using multiple virtual machines, each with a different version of Internet Explorer.</p>
+<figure class='fig'>
+<img alt="VirtualBox" src="../../assets/images/courses/advanced-html-css/feature-support-polyfills/virtualbox.png" />
+<figcaption>
+<strong>Fig. 9</strong>
+<p>VirtualBox running on Mac OS X with Internet Explorer versions 6 through 9.</p>
+</figcaption>
+</figure>
+<p>Microsoft provides a handful of VirtualPCs that can be used solely for testing. Setting all of these up can be a herculean task. Fortunately, Greg Thornton has built an <a href="http://xdissent.github.com/ievms/" rel="nofollow">automated installer</a> for all of these virtual machines. The installation takes a while to download all of the different virtual machines, and requires a decent amount of disk space. Prepare adequately by only installing the necessary virtual machines and by clearing up the necessary disk space ahead of time. Depending on how often the virtual machines are used, it may be worth installing them on an external hard drive.</p>
+<p>Internet Explorer versions 8 and above have built-in development tools, unfortunately versions 7 and below do not. The web inspector and all of the other debugging tools we&#8217;ve grown to love are not readily available within Internet Explorer 7 and below. There is, however, a <a href="https://getfirebug.com/firebuglite#Stable" rel="nofollow">Firebug Lite</a> bookmarklet that provides an in browser inspector that is tremendously helpful.</p>
+<figure class='fig'>
+<img alt="VirtualBox" src="../../assets/images/courses/advanced-html-css/feature-support-polyfills/ie7.png" />
+<figcaption>
+<strong>Fig. 9</strong>
+<p>Internet Explorer 7 running inside of a virtual machine with the Firebug Lite bookmarklet open for debugging.</p>
+</figcaption>
+</figure>
+<h2>Resources <abbr title="and">&amp;</abbr> Links</h2>
+<ul class='list-column-2 group'>
+<li>
+<a href='http://code.google.com/p/html5shiv/' rel='nofollow'>HTML5 Shiv</a>
+via Remy Sharp
+</li>
+<li>
+<a href='http://css-tricks.com/how-to-create-an-ie-only-stylesheet/' rel='nofollow'>How To Create an IE-Only Stylesheet</a>
+via CSS-Tricks
+</li>
+<li>
+<a href='http://modernizr.com/' rel='nofollow'>Modernizr</a>
+</li>
+<li>
+<a href='https://davidwalsh.name/loading-scripts-jquery' rel='nofollow'>Loading Scripts with jQuery</a>
+via David Walsh
+</li>
+<li>
+<a href='http://davatron5000.github.com/deCSS3/' rel='nofollow'>deCSS3</a>
+via Paravel and Crew
+</li>
+<li>
+<a href='http://haz.io/' rel='nofollow'>haz.io</a>
+via Philipp Bosch
+</li>
+<li>
+<a href='https://github.com/Modernizr/Modernizr/wiki/HTML5-Cross-browser-Polyfills' rel='nofollow'>HTML5 Cross Browser Polyfills</a>
+</li>
+<li>
+<a href='http://html5please.com/' rel='nofollow'>HTML5 Please</a>
+</li>
+<li>
+<a href='http://xdissent.github.com/ievms/' rel='nofollow'>Microsoft IE Virtual Machines</a>
+via Greg Thornton
+</li>
+</ul>
+<ul class='share' data-js='share' data-permalink='<footer class='primary-footer'>
+<div class='clamp'>
+<small>&copy; CodeSquad LLC</small>
+<div class='enjoy-cta'>
+Enjoy these lessons?
+<a class='twitter-follow-button' data-lang='en' data-show-count='false' data-size='large' href='https://twitter.com/codesquadllc'>
+Follow @codesquadllc
+</a>
+</div>
+</div>
+<li>
+<a class='share-twitter' data-js='share-twitter' href='#' rel='nofollow'>
+Share on Twitter
+</a>
+</li>
+<li>
+<a class='share-facebook' data-js='share-facebook' href='#' rel='nofollow'>
+Share on Facebook
+</a>
+</li>
+<li>
+<a class='share-google' data-js='share-google' href='#' rel='nofollow'>
+Share on Google+
+</a>
+</li>
+</ul>
+</article>
+<nav class='pagination container'>
+<ul>
+<li class='pagination-prev'>
+<a href='../transitions-animations/index.html' rel='prev'>
+<strong>Lesson 8</strong>
+<span>Transitions &amp; Animations</span>
+</a>
+</li>
+<li class='pagination-next'>
+<a href='../semantics-accessibility/index.html' rel='next'>
+<strong>Lesson 10</strong>
+<span>Extending Semantics &amp; Accessibility</span>
+</a>
+</li>
+</ul>
+</nav>
+<section class='lead-promo'>
+<div class='container'>
+<h2>Learn More <span>HTML &amp; CSS</span> or Study Other Topics</h2>
+<p>Learning how to code HTML <abbr title="and">&amp;</abbr> CSS and building successful websites can be challenging, and at times additional help and explanation can go a long way. Fortunately there are plenty of online schools, boot camps, workshops, and the alike, that can help.</p>
+<p>Select your topic of interest below and I will recommend a course I believe will provide the best learning opportunity for you.</p>
+<div class='note lead-recommended-courses'>
+<div class='note-box'>
+<h3>Select Your Topic of Interest:</h3>
+<form class='margin-bottom'>
+<div class='form-toggles form-toggles-wide'>
+<input data-toggle-control='topic' hidden name='interest' required type='radio' value='empty'>
+<div class='form-toggle-row'>
+<input data-toggle-control='topic' hidden id='design-product' name='interest' required type='radio' value='Product &amp;amp; Design'>
+<label class='form-toggle' for='design-product' onClick="_gaq.push(['_trackEvent', 'Course Filter', 'Design &amp; Product', 'Feature Support &amp;amp; Polyfills']);">Design &amp; Product</label>
+<input data-toggle-control='topic' hidden id='front-end-development' name='interest' required type='radio' value='Front-end Development'>
+<label class='form-toggle' for='front-end-development' onClick="_gaq.push(['_trackEvent', 'Course Filter', 'Front-end Development', 'Feature Support &amp;amp; Polyfills']);">Front-end Development</label>
+<input data-toggle-control='topic' hidden id='web-development' name='interest' required type='radio' value='Web Development'>
+<label class='form-toggle' for='web-development' onClick="_gaq.push(['_trackEvent', 'Course Filter', 'Web Development', 'Feature Support &amp;amp; Polyfills']);">Web Development</label>
+</div>
+<div class='form-toggle-row'>
+<input data-toggle-control='topic' hidden id='mobile-development' name='interest' required type='radio' value='Mobile Development'>
+<label class='form-toggle' for='mobile-development' onClick="_gaq.push(['_trackEvent', 'Course Filter', 'Mobile Development', 'Feature Support &amp;amp; Polyfills']);">Mobile Development</label>
+<input data-toggle-control='topic' hidden id='data-marketing' name='interest' required type='radio' value='Data &amp;amp; Marketing'>
+<label class='form-toggle' for='data-marketing' onClick="_gaq.push(['_trackEvent', 'Course Filter', 'Data &amp; Marketing', 'Feature Support &amp;amp; Polyfills']);">Data &amp; Marketing</label>
+<input data-toggle-control='topic' hidden id='business-operations' name='interest' required type='radio' value='Business &amp;amp; Operations'>
+<label class='form-toggle' for='business-operations' onClick="_gaq.push(['_trackEvent', 'Course Filter', 'Business &amp; Operations', 'Feature Support &amp;amp; Polyfills']);">Business &amp; Operations</label>
+</div>
+</div>
+</form>
+<h3>Your Course Recommendations:</h3>
+<div class='recommended-courses-empty' data-toggle-topic='empty' hidden>
+Select a topic above to view your course recommendations.
+</div>
+<div data-toggle-topic='Business &amp;amp; Operations' hidden>
+<p>Based on your interest in Business &amp; Operations I recommend checking out the following <a href="https://treehouse.7eer.net/c/388403/263461/3944" rel="nofollow" target="_blank" onClick="_gaq.push(['_trackEvent', 'Treehouse Course Select', 'Treehouse Courses', 'Feature Support &amp; Polyfills']);">Treehouse courses</a>:</p>
+<ul class='lead-list-cols group'>
+<li>
+<a class='recommended-course-title' href='https://treehouse.7eer.net/c/388403/294890/3944' onClick="_gaq.push(['_trackEvent', 'Treehouse Course Select', 'How to Start a Business', 'Feature Support &amp;amp; Polyfills']);" rel='nofollow' target='_blank'>How to Start a Business</a>
+<div class='recommended-course-details'>Beginner</div>
+</li>
+<li>
+<a class='recommended-course-title' href='https://treehouse.7eer.net/c/388403/294890/3944' onClick="_gaq.push(['_trackEvent', 'Treehouse Course Select', 'How to Write a Business Plan', 'Feature Support &amp;amp; Polyfills']);" rel='nofollow' target='_blank'>How to Write a Business Plan</a>
+<div class='recommended-course-details'>Beginner</div>
+</li>
+<li>
+<a class='recommended-course-title' href='https://treehouse.7eer.net/c/388403/294890/3944' onClick="_gaq.push(['_trackEvent', 'Treehouse Course Select', 'How to Market Your Business', 'Feature Support &amp;amp; Polyfills']);" rel='nofollow' target='_blank'>How to Market Your Business</a>
+<div class='recommended-course-details'>Intermediate</div>
+</li>
+<li>
+<a class='recommended-course-title' href='https://treehouse.7eer.net/c/388403/294890/3944' onClick="_gaq.push(['_trackEvent', 'Treehouse Course Select', 'How to Run a Web Design Business', 'Feature Support &amp;amp; Polyfills']);" rel='nofollow' target='_blank'>How to Run a Web Design Business</a>
+<div class='recommended-course-details'>Advanced</div>
+</li>
+<li>
+<a class='recommended-course-title' href='https://treehouse.7eer.net/c/388403/294890/3944' onClick="_gaq.push(['_trackEvent', 'Treehouse Course Select', 'Building Your Resume', 'Feature Support &amp;amp; Polyfills']);" rel='nofollow' target='_blank'>Building Your Resume</a>
+<div class='recommended-course-details'>Beginner</div>
+</li>
+<li>
+<a class='recommended-course-title' href='https://treehouse.7eer.net/c/388403/294890/3944' onClick="_gaq.push(['_trackEvent', 'Treehouse Course Select', 'Scrum Basics', 'Feature Support &amp;amp; Polyfills']);" rel='nofollow' target='_blank'>Scrum Basics</a>
+<div class='recommended-course-details'>Intermediate</div>
+</li>
+<li>
+<a class='recommended-course-title' href='https://treehouse.7eer.net/c/388403/294890/3944' onClick="_gaq.push(['_trackEvent', 'Treehouse Course Select', 'Careers Foundations', 'Feature Support &amp;amp; Polyfills']);" rel='nofollow' target='_blank'>Careers Foundations</a>
+<div class='recommended-course-details'>Beginner</div>
+</li>
+<li>
+<a class='recommended-course-title' href='https://treehouse.7eer.net/c/388403/294890/3944' onClick="_gaq.push(['_trackEvent', 'Treehouse Course Select', 'SEO Basics', 'Feature Support &amp;amp; Polyfills']);" rel='nofollow' target='_blank'>SEO Basics</a>
+<div class='recommended-course-details'>Beginner</div>
+</li>
+<li>
+<a class='recommended-course-title' href='https://treehouse.7eer.net/c/388403/294890/3944' onClick="_gaq.push(['_trackEvent', 'Treehouse Course Select', 'Copyright Basics', 'Feature Support &amp;amp; Polyfills']);" rel='nofollow' target='_blank'>Copyright Basics</a>
+<div class='recommended-course-details'>Beginner</div>
+</li>
+<li>
+<a class='recommended-course-title' href='https://treehouse.7eer.net/c/388403/294890/3944' onClick="_gaq.push(['_trackEvent', 'Treehouse Course Select', 'How to Build Your Business Through Blogging', 'Feature Support &amp;amp; Polyfills']);" rel='nofollow' target='_blank'>How to Build Your Business Through Blogging</a>
+<div class='recommended-course-details'>Beginner</div>
+</li>
+</ul>
+</div>
+<div data-toggle-topic='Data &amp;amp; Marketing' hidden>
+<p>Based on your interest in Data &amp; Marketing I recommend checking out the following <a href="https://treehouse.7eer.net/c/388403/263461/3944" rel="nofollow" target="_blank" onClick="_gaq.push(['_trackEvent', 'Treehouse Course Select', 'Treehouse Courses', 'Feature Support &amp; Polyfills']);">Treehouse courses</a>:</p>
+<ul class='lead-list-cols group'>
+<li>
+<a class='recommended-course-title' href='https://treehouse.7eer.net/c/388403/294890/3944' onClick="_gaq.push(['_trackEvent', 'Treehouse Course Select', 'Introduction to Big Data', 'Feature Support &amp;amp; Polyfills']);" rel='nofollow' target='_blank'>Introduction to Big Data</a>
+<div class='recommended-course-details'>Intermediate</div>
+</li>
+<li>
+<a class='recommended-course-title' href='https://treehouse.7eer.net/c/388403/294890/3944' onClick="_gaq.push(['_trackEvent', 'Treehouse Course Select', 'Introduction to Data Security', 'Feature Support &amp;amp; Polyfills']);" rel='nofollow' target='_blank'>Introduction to Data Security</a>
+<div class='recommended-course-details'>Beginner</div>
+</li>
+<li>
+<a class='recommended-course-title' href='https://treehouse.7eer.net/c/388403/294890/3944' onClick="_gaq.push(['_trackEvent', 'Treehouse Course Select', 'Data Science Basics', 'Feature Support &amp;amp; Polyfills']);" rel='nofollow' target='_blank'>Data Science Basics</a>
+<div class='recommended-course-details'>Intermediate</div>
+</li>
+<li>
+<a class='recommended-course-title' href='https://treehouse.7eer.net/c/388403/294890/3944' onClick="_gaq.push(['_trackEvent', 'Treehouse Course Select', 'SQL Basics', 'Feature Support &amp;amp; Polyfills']);" rel='nofollow' target='_blank'>SQL Basics</a>
+<div class='recommended-course-details'>Beginner</div>
+</li>
+<li>
+<a class='recommended-course-title' href='https://treehouse.7eer.net/c/388403/294890/3944' onClick="_gaq.push(['_trackEvent', 'Treehouse Course Select', 'Modifying Data with SQL', 'Feature Support &amp;amp; Polyfills']);" rel='nofollow' target='_blank'>Modifying Data with SQL</a>
+<div class='recommended-course-details'>Beginner</div>
+</li>
+<li>
+<a class='recommended-course-title' href='https://treehouse.7eer.net/c/388403/294890/3944' onClick="_gaq.push(['_trackEvent', 'Treehouse Course Select', 'Reporting with SQL', 'Feature Support &amp;amp; Polyfills']);" rel='nofollow' target='_blank'>Reporting with SQL</a>
+<div class='recommended-course-details'>Beginner</div>
+</li>
+<li>
+<a class='recommended-course-title' href='https://treehouse.7eer.net/c/388403/294890/3944' onClick="_gaq.push(['_trackEvent', 'Treehouse Course Select', 'Querying Relational Databases', 'Feature Support &amp;amp; Polyfills']);" rel='nofollow' target='_blank'>Querying Relational Databases</a>
+<div class='recommended-course-details'>Intermediate</div>
+</li>
+<li>
+<a class='recommended-course-title' href='https://treehouse.7eer.net/c/388403/294890/3944' onClick="_gaq.push(['_trackEvent', 'Treehouse Course Select', 'Spreadsheet Basics', 'Feature Support &amp;amp; Polyfills']);" rel='nofollow' target='_blank'>Spreadsheet Basics</a>
+<div class='recommended-course-details'>Beginner</div>
+</li>
+</ul>
+</div>
+<div data-toggle-topic='Product &amp;amp; Design' hidden>
+<p>Based on your interest in Product &amp; Design I recommend checking out the following <a href="https://treehouse.7eer.net/c/388403/263461/3944" rel="nofollow" target="_blank" onClick="_gaq.push(['_trackEvent', 'Treehouse Course Select', 'Treehouse Courses', 'Feature Support &amp; Polyfills']);">Treehouse courses</a>:</p>
+<ul class='lead-list-cols group'>
+<li>
+<a class='recommended-course-title' href='https://treehouse.7eer.net/c/388403/294890/3944' onClick="_gaq.push(['_trackEvent', 'Treehouse Course Select', 'Design Foundations', 'Feature Support &amp;amp; Polyfills']);" rel='nofollow' target='_blank'>Design Foundations</a>
+<div class='recommended-course-details'>Beginner</div>
+</li>
+<li>
+<a class='recommended-course-title' href='https://treehouse.7eer.net/c/388403/294890/3944' onClick="_gaq.push(['_trackEvent', 'Treehouse Course Select', 'Aesthetic Foundations', 'Feature Support &amp;amp; Polyfills']);" rel='nofollow' target='_blank'>Aesthetic Foundations</a>
+<div class='recommended-course-details'>Beginner</div>
+</li>
+<li>
+<a class='recommended-course-title' href='https://treehouse.7eer.net/c/388403/294890/3944' onClick="_gaq.push(['_trackEvent', 'Treehouse Course Select', 'Usability Foundations', 'Feature Support &amp;amp; Polyfills']);" rel='nofollow' target='_blank'>Usability Foundations</a>
+<div class='recommended-course-details'>Beginner</div>
+</li>
+<li>
+<a class='recommended-course-title' href='https://treehouse.7eer.net/c/388403/294890/3944' onClick="_gaq.push(['_trackEvent', 'Treehouse Course Select', 'Web Typography', 'Feature Support &amp;amp; Polyfills']);" rel='nofollow' target='_blank'>Web Typography</a>
+<div class='recommended-course-details'>Beginner</div>
+</li>
+<li>
+<a class='recommended-course-title' href='https://treehouse.7eer.net/c/388403/294890/3944' onClick="_gaq.push(['_trackEvent', 'Treehouse Course Select', 'UX Basics', 'Feature Support &amp;amp; Polyfills']);" rel='nofollow' target='_blank'>UX Basics</a>
+<div class='recommended-course-details'>Beginner</div>
+</li>
+<li>
+<a class='recommended-course-title' href='https://treehouse.7eer.net/c/388403/294890/3944' onClick="_gaq.push(['_trackEvent', 'Treehouse Course Select', 'Researching User Needs', 'Feature Support &amp;amp; Polyfills']);" rel='nofollow' target='_blank'>Researching User Needs</a>
+<div class='recommended-course-details'>Intermediate</div>
+</li>
+<li>
+<a class='recommended-course-title' href='https://treehouse.7eer.net/c/388403/294890/3944' onClick="_gaq.push(['_trackEvent', 'Treehouse Course Select', 'Sketch Basics', 'Feature Support &amp;amp; Polyfills']);" rel='nofollow' target='_blank'>Sketch Basics</a>
+<div class='recommended-course-details'>Beginner</div>
+</li>
+<li>
+<a class='recommended-course-title' href='https://treehouse.7eer.net/c/388403/294890/3944' onClick="_gaq.push(['_trackEvent', 'Treehouse Course Select', 'Photoshop Foundations', 'Feature Support &amp;amp; Polyfills']);" rel='nofollow' target='_blank'>Photoshop Foundations</a>
+<div class='recommended-course-details'>Beginner</div>
+</li>
+<li>
+<a class='recommended-course-title' href='https://treehouse.7eer.net/c/388403/294890/3944' onClick="_gaq.push(['_trackEvent', 'Treehouse Course Select', 'Illustrator Foundations', 'Feature Support &amp;amp; Polyfills']);" rel='nofollow' target='_blank'>Illustrator Foundations</a>
+<div class='recommended-course-details'>Beginner</div>
+</li>
+<li>
+<a class='recommended-course-title' href='https://treehouse.7eer.net/c/388403/294890/3944' onClick="_gaq.push(['_trackEvent', 'Treehouse Course Select', 'Brand Identity Basics', 'Feature Support &amp;amp; Polyfills']);" rel='nofollow' target='_blank'>Brand Identity Basics</a>
+<div class='recommended-course-details'>Beginner</div>
+</li>
+<li>
+<a class='recommended-course-title' href='https://treehouse.7eer.net/c/388403/294890/3944' onClick="_gaq.push(['_trackEvent', 'Treehouse Course Select', 'Web Accessibility Compliance', 'Feature Support &amp;amp; Polyfills']);" rel='nofollow' target='_blank'>Web Accessibility Compliance</a>
+<div class='recommended-course-details'>Beginner</div>
+</li>
+</ul>
+</div>
+<div data-toggle-topic='Front-end Development' hidden>
+<p>Based on your interest in Front-end Development I recommend checking out the following <a href="https://treehouse.7eer.net/c/388403/263461/3944" rel="nofollow" target="_blank" onClick="_gaq.push(['_trackEvent', 'Treehouse Course Select', 'Treehouse Courses', 'Feature Support &amp; Polyfills']);">Treehouse courses</a>:</p>
+<ul class='lead-list-cols group'>
+<li>
+<a class='recommended-course-title' href='https://treehouse.7eer.net/c/388403/294890/3944' onClick="_gaq.push(['_trackEvent', 'Treehouse Course Select', 'JavaScript Basics', 'Feature Support &amp;amp; Polyfills']);" rel='nofollow' target='_blank'>JavaScript Basics</a>
+<div class='recommended-course-details'>Beginner</div>
+</li>
+<li>
+<a class='recommended-course-title' href='https://treehouse.7eer.net/c/388403/294890/3944' onClick="_gaq.push(['_trackEvent', 'Treehouse Course Select', 'Object-Oriented JavaScript', 'Feature Support &amp;amp; Polyfills']);" rel='nofollow' target='_blank'>Object-Oriented JavaScript</a>
+<div class='recommended-course-details'>Intermediate</div>
+</li>
+<li>
+<a class='recommended-course-title' href='https://treehouse.7eer.net/c/388403/294890/3944' onClick="_gaq.push(['_trackEvent', 'Treehouse Course Select', 'React Basics', 'Feature Support &amp;amp; Polyfills']);" rel='nofollow' target='_blank'>React Basics</a>
+<div class='recommended-course-details'>Intermediate</div>
+</li>
+<li>
+<a class='recommended-course-title' href='https://treehouse.7eer.net/c/388403/294890/3944' onClick="_gaq.push(['_trackEvent', 'Treehouse Course Select', 'Node.js Basics', 'Feature Support &amp;amp; Polyfills']);" rel='nofollow' target='_blank'>Node.js Basics</a>
+<div class='recommended-course-details'>Intermediate</div>
+</li>
+<li>
+ <a class='recommended-course-title' href='https://treehouse.7eer.net/c/388403/294890/3944' onClick="_gaq.push(['_trackEvent', 'Treehouse Course Select', 'Angular Basics', 'Feature Support &amp;amp; Polyfills']);" rel='nofollow' target='_blank'>Angular Basics</a>
+<div class='recommended-course-details'>Intermediate</div>
+</li>
+<li>
+<a class='recommended-course-title' href='https://treehouse.7eer.net/c/388403/294890/3944' onClick="_gaq.push(['_trackEvent', 'Treehouse Course Select', 'jQuery Basics', 'Feature Support &amp;amp; Polyfills']);" rel='nofollow' target='_blank'>jQuery Basics</a>
+<div class='recommended-course-details'>Beginner</div>
+</li>
+<li>
+<a class='recommended-course-title' href='https://treehouse.7eer.net/c/388403/294890/3944' onClick="_gaq.push(['_trackEvent', 'Treehouse Course Select', 'AJAX Basics', 'Feature Support &amp;amp; Polyfills']);" rel='nofollow' target='_blank'>AJAX Basics</a>
+<div class='recommended-course-details'>Intermediate</div>
+</li>
+<li>
+<a class='recommended-course-title' href='https://treehouse.7eer.net/c/388403/294890/3944' onClick="_gaq.push(['_trackEvent', 'Treehouse Course Select', 'D3.js', 'Feature Support &amp;amp; Polyfills']);" rel='nofollow' target='_blank'>D3.js</a>
+<div class='recommended-course-details'>Intermediate</div>
+</li>
+<li>
+<a class='recommended-course-title' href='https://treehouse.7eer.net/c/388403/294890/3944' onClick="_gaq.push(['_trackEvent', 'Treehouse Course Select', 'Bootstrap Basics', 'Feature Support &amp;amp; Polyfills']);" rel='nofollow' target='_blank'>Bootstrap Basics</a>
+<div class='recommended-course-details'>Beginner</div>
+</li>
+<li>
+<a class='recommended-course-title' href='https://treehouse.7eer.net/c/388403/294890/3944' onClick="_gaq.push(['_trackEvent', 'Treehouse Course Select', 'Sass Basics', 'Feature Support &amp;amp; Polyfills']);" rel='nofollow' target='_blank'>Sass Basics</a>
+<div class='recommended-course-details'>Beginner</div>
+</li>
+<li>
+<a class='recommended-course-title' href='https://treehouse.7eer.net/c/388403/294890/3944' onClick="_gaq.push(['_trackEvent', 'Treehouse Course Select', 'Advanced Sass', 'Feature Support &amp;amp; Polyfills']);" rel='nofollow' target='_blank'>Advanced Sass</a>
+<div class='recommended-course-details'>Advanced</div>
+</li>
+<li>
+<a class='recommended-course-title' href='https://treehouse.7eer.net/c/388403/294890/3944' onClick="_gaq.push(['_trackEvent', 'Treehouse Course Select', 'Building Applications with React &amp;amp; Redux', 'Feature Support &amp;amp; Polyfills']);" rel='nofollow' target='_blank'>Building Applications with React &amp; Redux</a>
+<div class='recommended-course-details'>Advanced</div>
+</li>
+<li>
+<a class='recommended-course-title' href='https://treehouse.7eer.net/c/388403/294890/3944' onClick="_gaq.push(['_trackEvent', 'Treehouse Course Select', 'Introducing ES', 'Feature Support &amp;amp; Polyfills']);" rel='nofollow' target='_blank'>Introducing ES</a>
+<div class='recommended-course-details'>Intermediate</div>
+</li>
+<li>
+<a class='recommended-course-title' href='https://treehouse.7eer.net/c/388403/294890/3944' onClick="_gaq.push(['_trackEvent', 'Treehouse Course Select', 'Gulp Basics', 'Feature Support &amp;amp; Polyfills']);" rel='nofollow' target='_blank'>Gulp Basics</a>
+<div class='recommended-course-details'>Intermediate</div>
+</li>
+<li>
+<a class='recommended-course-title' href='https://treehouse.7eer.net/c/388403/294890/3944' onClick="_gaq.push(['_trackEvent', 'Treehouse Course Select', 'npm Basics', 'Feature Support &amp;amp; Polyfills']);" rel='nofollow' target='_blank'>npm Basics</a>
+<div class='recommended-course-details'>Beginner</div>
+</li>
+<li>
+<a class='recommended-course-title' href='https://treehouse.7eer.net/c/388403/294890/3944' onClick="_gaq.push(['_trackEvent', 'Treehouse Course Select', 'SVG Basics', 'Feature Support &amp;amp; Polyfills']);" rel='nofollow' target='_blank'>SVG Basics</a>
+<div class='recommended-course-details'>Intermediate</div>
+</li>
+<li>
+<a class='recommended-course-title' href='https://treehouse.7eer.net/c/388403/294890/3944' onClick="_gaq.push(['_trackEvent', 'Treehouse Course Select', 'WordPress Basics', 'Feature Support &amp;amp; Polyfills']);" rel='nofollow' target='_blank'>WordPress Basics</a>
+<div class='recommended-course-details'>Beginner</div>
+</li>
+<li>
+<a class='recommended-course-title' href='https://treehouse.7eer.net/c/388403/294890/3944' onClick="_gaq.push(['_trackEvent', 'Treehouse Course Select', 'Drupal Basics', 'Feature Support &amp;amp; Polyfills']);" rel='nofollow' target='_blank'>Drupal Basics</a>
+<div class='recommended-course-details'>Beginner</div>
+</li>
+<li>
+<a class='recommended-course-title' href='https://treehouse.7eer.net/c/388403/294890/3944' onClick="_gaq.push(['_trackEvent', 'Treehouse Course Select', 'Front-End Web Optimization Workflow', 'Feature Support &amp;amp; Polyfills']);" rel='nofollow' target='_blank'>Front-End Web Optimization Workflow</a>
+<div class='recommended-course-details'>Intermediate</div>
+</li>
+</ul>
+</div>
+<div data-toggle-topic='Mobile Development' hidden>
+<p>Based on your interest in Mobile Development I recommend checking out the following <a href="https://treehouse.7eer.net/c/388403/263461/3944" rel="nofollow" target="_blank" onClick="_gaq.push(['_trackEvent', 'Treehouse Course Select', 'Treehouse Courses', 'Feature Support &amp; Polyfills']);">Treehouse courses</a>:</p>
+<ul class='lead-list-cols group'>
+<li>
+<a class='recommended-course-title' href='https://treehouse.7eer.net/c/388403/294890/3944' onClick="_gaq.push(['_trackEvent', 'Treehouse Course Select', 'iOS Design Patterns', 'Feature Support &amp;amp; Polyfills']);" rel='nofollow' target='_blank'>iOS Design Patterns</a>
+<div class='recommended-course-details'>Intermediate</div>
+</li>
+<li>
+<a class='recommended-course-title' href='https://treehouse.7eer.net/c/388403/294890/3944' onClick="_gaq.push(['_trackEvent', 'Treehouse Course Select', 'Objective-C Basics', 'Feature Support &amp;amp; Polyfills']);" rel='nofollow' target='_blank'>Objective-C Basics</a>
+<div class='recommended-course-details'>Beginner</div>
+</li>
+<li>
+<a class='recommended-course-title' href='https://treehouse.7eer.net/c/388403/294890/3944' onClick="_gaq.push(['_trackEvent', 'Treehouse Course Select', 'Swift Basics', 'Feature Support &amp;amp; Polyfills']);" rel='nofollow' target='_blank'>Swift Basics</a>
+<div class='recommended-course-details'>Beginner</div>
+ </li>
+<li>
+<a class='recommended-course-title' href='https://treehouse.7eer.net/c/388403/294890/3944' onClick="_gaq.push(['_trackEvent', 'Treehouse Course Select', 'Kotlin &amp;amp; Anko', 'Feature Support &amp;amp; Polyfills']);" rel='nofollow' target='_blank'>Kotlin &amp; Anko</a>
+<div class='recommended-course-details'>Advanced</div>
+</li>
+<li>
+<a class='recommended-course-title' href='https://treehouse.7eer.net/c/388403/294890/3944' onClick="_gaq.push(['_trackEvent', 'Treehouse Course Select', 'Java Basics', 'Feature Support &amp;amp; Polyfills']);" rel='nofollow' target='_blank'>Java Basics</a>
+<div class='recommended-course-details'>Beginner</div>
+</li>
+<li>
+<a class='recommended-course-title' href='https://treehouse.7eer.net/c/388403/294890/3944' onClick="_gaq.push(['_trackEvent', 'Treehouse Course Select', 'Object-Oriented Objective-C', 'Feature Support &amp;amp; Polyfills']);" rel='nofollow' target='_blank'>Object-Oriented Objective-C</a>
+<div class='recommended-course-details'>Beginner</div>
+</li>
+<li>
+<a class='recommended-course-title' href='https://treehouse.7eer.net/c/388403/294890/3944' onClick="_gaq.push(['_trackEvent', 'Treehouse Course Select', 'Objective-C for Swift Developers', 'Feature Support &amp;amp; Polyfills']);" rel='nofollow' target='_blank'>Objective-C for Swift Developers</a>
+<div class='recommended-course-details'>Intermediate</div>
+</li>
+<li>
+<a class='recommended-course-title' href='https://treehouse.7eer.net/c/388403/294890/3944' onClick="_gaq.push(['_trackEvent', 'Treehouse Course Select', 'Build a Simple iPhone App with Objective-C', 'Feature Support &amp;amp; Polyfills']);" rel='nofollow' target='_blank'>Build a Simple iPhone App with Objective-C</a>
+<div class='recommended-course-details'>Beginner</div>
+</li>
+<li>
+<a class='recommended-course-title' href='https://treehouse.7eer.net/c/388403/294890/3944' onClick="_gaq.push(['_trackEvent', 'Treehouse Course Select', 'Build a Simple Android App', 'Feature Support &amp;amp; Polyfills']);" rel='nofollow' target='_blank'>Build a Simple Android App</a>
+<div class='recommended-course-details'>Beginner</div>
+</li>
+</ul>
+</div>
+<div data-toggle-topic='Web Development' hidden>
+<p>Based on your interest in Web Development I recommend checking out the following <a href="https://treehouse.7eer.net/c/388403/263461/3944" rel="nofollow" target="_blank" onClick="_gaq.push(['_trackEvent', 'Treehouse Course Select', 'Treehouse Courses', 'Feature Support &amp; Polyfills']);">Treehouse courses</a>:</p>
+<ul class='lead-list-cols group'>
+<li>
+<a class='recommended-course-title' href='https://treehouse.7eer.net/c/388403/294890/3944' onClick="_gaq.push(['_trackEvent', 'Treehouse Course Select', 'Git Basics', 'Feature Support &amp;amp; Polyfills']);" rel='nofollow' target='_blank'>Git Basics</a>
+<div class='recommended-course-details'>Beginner</div>
+</li>
+<li>
+<a class='recommended-course-title' href='https://treehouse.7eer.net/c/388403/294890/3944' onClick="_gaq.push(['_trackEvent', 'Treehouse Course Select', 'Console Foundations', 'Feature Support &amp;amp; Polyfills']);" rel='nofollow' target='_blank'>Console Foundations</a>
+<div class='recommended-course-details'>Beginner</div>
+</li>
+<li>
+ <a class='recommended-course-title' href='https://treehouse.7eer.net/c/388403/294890/3944' onClick="_gaq.push(['_trackEvent', 'Treehouse Course Select', 'HTTP Basics', 'Feature Support &amp;amp; Polyfills']);" rel='nofollow' target='_blank'>HTTP Basics</a>
+<div class='recommended-course-details'>Beginner</div>
+</li>
+<li>
+<a class='recommended-course-title' href='https://treehouse.7eer.net/c/388403/294890/3944' onClick="_gaq.push(['_trackEvent', 'Treehouse Course Select', 'REST API Basics', 'Feature Support &amp;amp; Polyfills']);" rel='nofollow' target='_blank'>REST API Basics</a>
+<div class='recommended-course-details'>Beginner</div>
+</li>
+<li>
+<a class='recommended-course-title' href='https://treehouse.7eer.net/c/388403/294890/3944' onClick="_gaq.push(['_trackEvent', 'Treehouse Course Select', 'Introduction to Functional Programming', 'Feature Support &amp;amp; Polyfills']);" rel='nofollow' target='_blank'>Introduction to Functional Programming</a>
+<div class='recommended-course-details'>Intermediate</div>
+</li>
+<li>
+<a class='recommended-course-title' href='https://treehouse.7eer.net/c/388403/294890/3944' onClick="_gaq.push(['_trackEvent', 'Treehouse Course Select', 'Ruby Basics', 'Feature Support &amp;amp; Polyfills']);" rel='nofollow' target='_blank'>Ruby Basics</a>
+<div class='recommended-course-details'>Beginner</div>
+</li>
+<li>
+<a class='recommended-course-title' href='https://treehouse.7eer.net/c/388403/294890/3944' onClick="_gaq.push(['_trackEvent', 'Treehouse Course Select', 'Ruby Gems', 'Feature Support &amp;amp; Polyfills']);" rel='nofollow' target='_blank'>Ruby Gems</a>
+<div class='recommended-course-details'>Beginner</div>
+</li>
+<li>
+<a class='recommended-course-title' href='https://treehouse.7eer.net/c/388403/294890/3944' onClick="_gaq.push(['_trackEvent', 'Treehouse Course Select', 'Ruby on Rails 5 Basics', 'Feature Support &amp;amp; Polyfills']);" rel='nofollow' target='_blank'>Ruby on Rails 5 Basics</a>
+<div class='recommended-course-details'>Beginner</div>
+</li>
+<li>
+<a class='recommended-course-title' href='https://treehouse.7eer.net/c/388403/294890/3944' onClick="_gaq.push(['_trackEvent', 'Treehouse Course Select', 'Build a Rails API', 'Feature Support &amp;amp; Polyfills']);" rel='nofollow' target='_blank'>Build a Rails API</a>
+<div class='recommended-course-details'>Intermediate</div>
+</li>
+<li>
+<a class='recommended-course-title' href='https://treehouse.7eer.net/c/388403/294890/3944' onClick="_gaq.push(['_trackEvent', 'Treehouse Course Select', 'Python Basics', 'Feature Support &amp;amp; Polyfills']);" rel='nofollow' target='_blank'>Python Basics</a>
+<div class='recommended-course-details'>Beginner</div>
+</li>
+<li>
+<a class='recommended-course-title' href='https://treehouse.7eer.net/c/388403/294890/3944' onClick="_gaq.push(['_trackEvent', 'Treehouse Course Select', 'Django Basics', 'Feature Support &amp;amp; Polyfills']);" rel='nofollow' target='_blank'>Django Basics</a>
+<div class='recommended-course-details'>Intermediate</div>
+</li>
+<li>
+<a class='recommended-course-title' href='https://treehouse.7eer.net/c/388403/294890/3944' onClick="_gaq.push(['_trackEvent', 'Treehouse Course Select', 'C# Basics', 'Feature Support &amp;amp; Polyfills']);" rel='nofollow' target='_blank'>C# Basics</a>
+<div class='recommended-course-details'>Beginner</div>
+</li>
+<li>
+<a class='recommended-course-title' href='https://treehouse.7eer.net/c/388403/294890/3944' onClick="_gaq.push(['_trackEvent', 'Treehouse Course Select', 'Go Language Overview', 'Feature Support &amp;amp; Polyfills']);" rel='nofollow' target='_blank'>Go Language Overview</a>
+<div class='recommended-course-details'>Intermediate</div>
+</li>
+<li>
+<a class='recommended-course-title' href='https://treehouse.7eer.net/c/388403/294890/3944' onClick="_gaq.push(['_trackEvent', 'Treehouse Course Select', 'PHP Basics', 'Feature Support &amp;amp; Polyfills']);" rel='nofollow' target='_blank'>PHP Basics</a>
+<div class='recommended-course-details'>Beginner</div>
+</li>
+<li>
+<a class='recommended-course-title' href='https://treehouse.7eer.net/c/388403/294890/3944' onClick="_gaq.push(['_trackEvent', 'Treehouse Course Select', 'PHP Standards &amp;amp; Best Practices', 'Feature Support &amp;amp; Polyfills']);" rel='nofollow' target='_blank'>PHP Standards &amp; Best Practices</a>
+<div class='recommended-course-details'>Intermediate</div>
+</li>
+<li>
+<a class='recommended-course-title' href='https://treehouse.7eer.net/c/388403/294890/3944' onClick="_gaq.push(['_trackEvent', 'Treehouse Course Select', 'Introduction to Scala', 'Feature Support &amp;amp; Polyfills']);" rel='nofollow' target='_blank'>Introduction to Scala</a>
+<div class='recommended-course-details'>Intermediate</div>
+</li>
+<li>
+<a class='recommended-course-title' href='https://treehouse.7eer.net/c/388403/294890/3944' onClick="_gaq.push(['_trackEvent', 'Treehouse Course Select', 'ASP.NET MVC Basics', 'Feature Support &amp;amp; Polyfills']);" rel='nofollow' target='_blank'>ASP.NET MVC Basics</a>
+<div class='recommended-course-details'>Beginner</div>
+</li>
+<li>
+<a class='recommended-course-title' href='https://treehouse.7eer.net/c/388403/294890/3944' onClick="_gaq.push(['_trackEvent', 'Treehouse Course Select', 'How to Make a Video Game', 'Feature Support &amp;amp; Polyfills']);" rel='nofollow' target='_blank'>How to Make a Video Game</a>
+<div class='recommended-course-details'>Beginner</div>
+</li>
+</ul>
+</div>
+</div>
+</div>
+</div>
+</section>
+<section class='container'>
+<div class='promo-book'>
+<h2>
+<a href='#'>Learn to Code HTML <abbr title="and">&amp;</abbr> CSS the Book</a>
+</h2>
+<a class='promo-img promo-book-img' data-js='promo-book-img' href='../index.html'><img alt="HTML and CSS" src="../../assets/images/book/book-sm.png" /></a>
+<p><cite>Learn to Code HTML <abbr title="and">&amp;</abbr> CSS</cite> is an interactive beginner&#8217;s guide with one express goal: <strong>teach you how to develop and style websites</strong> with HTML and CSS. Outlining the fundamentals, this book covers all of the common elements of front-end design and development.</p>
+<div class='promo-btn'>
+<a class='btn btn-cta' href='https://click.linksynergy.com/link?id=0UVRLqz5qts&offerid=145238.2038547&type=2&murl=http://www.informit.com/title/9780321940520' onClick="_gaq.push(['_trackEvent', 'Purchase', 'Peachpit', 'Feature Support &amp;amp; Polyfills']);" rel='nofollow'>Buy Learn to Code HTML <abbr title="and">&amp;</abbr> CSS</a>
+ </div>
+<p class='promo-links'>
+Also available at
+<span>
+<a href='http://www.amazon.com/Learn-Code-HTML-CSS-Websites/dp/0321940520' onClick="_gaq.push(['_trackEvent', 'Purchase', 'Amazon', 'Feature Support &amp;amp; Polyfills']);" rel='nofollow'>Amazon</a>
+and
+<a href='http://www.barnesandnoble.com/w/learn-to-code-html-and-css-shay-howe/1124334828' onClick="_gaq.push(['_trackEvent', 'Purchase', 'Barnes &amp; Noble', 'Feature Support &amp;amp; Polyfills']);" rel='nofollow'>Barnes &amp; Noble</a>
+</span>
+</p>
+</div>
+</section>
+<section class='container'>
+<div class='note'>
+<div class='promo note-box note-stack'>
+<h3>
+<a href='../../html-css/index.html'>Looking for Beginner HTML <abbr title="and">&amp;</abbr> CSS Lessons?</a>
+</h3>
+<a class='promo-img promo-course-img' href='../../html-css/index.html'><img alt="HTML and CSS" class="media-circle" src="../../assets/images/code.jpg" /></a>
+<p>Checkout these <a href="../../html-css/index.html">beginner focused HTML and CSS lessons</a>, compiled into a simple and comprehensive guide dedicated to helping beginners learn HTML and CSS, working through all common components.</p>
+<a class='btn btn-alt' href='../../html-css/index.html'>View Beginner HTML <abbr title="and">&amp;</abbr> CSS Lessons</a>
+</div>
+<div class='newsletter note-box group'>
+<h3>Join the Newsletter</h3>
+<p>To stay up to date and learn when new courses and lessons are posted, please sign up for the newsletter&#8212;spam free.</p>
+<form action='//codesquadllc.us4.list-manage.com/subscribe/post?u=98ada7f8bdec8f5ac0c78fd0f&amp;amp;id=4750db3524' class='newsletter-form' method='post' name='mc-embedded-subscribe-form' target='_blank'>
+<div class='input-group'>
+<input class='input-control' name='EMAIL' placeholder='Email address' required type='email'>
+<div class='input-group-btn'>
+<button class='btn btn-alt' name='subscribe'>Get Updates</button>
+</div>
+</div>
+</form>
+</div>
+</div>
+</section>
+<script async src='https://codepen.io/assets/embed/ei.js'></script>
+</div>
+<footer class='primary-footer'>
+<div class='clamp'>
+<small>&copy; CodeSquad LLC</small>
+<div class='enjoy-cta'>
+Enjoy these lessons?
+<a class='twitter-follow-button' data-lang='en' data-show-count='false' data-size='large' href='https://twitter.com/codesquadllc'>
+Follow @codesquadllc
+</a>
+</div>
+</div>
+</footer>
+</section>
+</div>
+</div>
+<script src='https://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js'></script>
+<script>
+      window.jQuery || document.write('<script src="/assets/javascripts/vendor/jquery-1.11.0.min.js"><\/script>')
+    </script>
+<script src="../../assets/javascripts/main.js" type="text/javascript"></script>
+
+</body>
+</html>
+
+<!-- Localized -->
